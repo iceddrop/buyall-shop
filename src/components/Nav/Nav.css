@@ -1,0 +1,234 @@
+.nav{
+    background-color:whitesmoke;
+    height:70px;
+    width:100%;
+}
+.logo-hamburger-div{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:70px;
+}
+.desktop-nav{
+    display: none;
+}
+.mobile-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    height: 250px;
+}
+.tablet-nav{
+    display: none;
+}
+.site-logo{
+    padding-left: 15px;
+}
+.hamburger{
+    padding-right:19px;
+}
+.search-form{
+    display: none;
+}
+.site-logo-2{
+    display: none;
+}
+.category{
+    position: relative;
+    display:flex;
+    align-items: center;
+}
+.category-dropdown{
+    position: absolute;
+    top: 150%;
+    background-color: white;
+}
+.category-dropdown-menu{  
+    list-style: none;
+    padding-top: 20px;
+}
+.popular-categories-products-header{
+    font-size: 1rem;
+}
+.categories-paragraph{
+    font-size: 0.9rem;
+}
+.category-sub-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(207, 20%, 91%);;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chevron-down{
+    margin-left:2px;
+}
+.popular-categories-text{
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.nav-item{
+    cursor: pointer;
+}
+.search-icon{
+    cursor: pointer;
+}
+.account {
+    display:flex;
+    cursor: pointer;
+}
+.cart{
+    display: flex;
+    cursor: pointer;
+}
+.close-dropdown{
+    display: none;
+}
+.navlist{
+   list-style:none;
+   font-family: poppins;
+   font-size: 1.1rem;
+}
+.navlist-2{
+    list-style: none;
+    font-family: poppins;
+    font-size: 1.1rem;
+}
+.cart-icon{
+    margin-right:5px;
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+.person-icon{
+    margin-right:5px;
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 460px ){
+   .navlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+    padding-top: 13px;
+   }
+   .navlist-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top:13px;
+    height: 70px;
+   }
+   .category-dropdown{
+    right:-110%;
+   }
+   .category-dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 550px;
+   }
+   .category-sub-div{
+    width: 220px;
+   }
+}
+@media screen and (min-width:768px){
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between!important;
+    }
+    .hamburger{
+        display: none;
+    }
+    .mobile-nav{
+        display: none;
+    }
+    .tablet-nav{
+        display: flex;
+        justify-content: space-around;
+        width:100%;
+    }
+    .logo-hamburger-div{
+        display: none;
+    }
+    .site-logo-2{
+        display: block;
+        height: 40px;
+        padding-left:20px;
+    }
+    .category-dropdown{
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .category-dropdown-menu{
+        display: grid;
+        grid-template-columns: 230px 230px;
+        grid-gap: 20px;
+    }
+    .categories-paragraph{
+        font-weight: lighter;
+    }
+    .navlist{
+        display: flex;     
+        justify-content: space-between;
+        width:330px;
+        font-size:1rem;
+        font-weight: bold;
+    }
+    .navlist-2{
+        display:flex;
+        justify-content: space-between;
+        width: 180px;
+    }
+    .cart-text{
+        font-size:1rem!important;
+        font-weight: bolder;
+    }
+    .account-text{
+        font-size:1rem!important;
+        font-weight: bolder;
+    }
+}
+@media screen and (min-width:1024px){
+    .navlist{
+        width:370px;
+    }
+    .category-dropdown{
+        width:700px;
+    }
+    .category-dropdown-menu{
+        grid-template-columns: 325px 325px;
+    }
+    .category-sub-div{
+        justify-content: start;
+    }
+    .categories-text-div{
+       padding-left: 15px;
+    }
+    .search-form{
+        display: block;
+    }
+    .search-div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:200px;
+        border: 1px solid grey;
+        padding: 7px;
+        border-radius: 15px;
+    }
+    .search-input{
+        border: none;
+        background-color: whitesmoke;
+        margin-left: 10px;
+    }
+}

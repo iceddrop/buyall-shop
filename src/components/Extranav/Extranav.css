@@ -1,0 +1,99 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.extra-nav{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    background-color: #1C352D;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-family:poppins;
+}
+.contact-div{
+    display: flex;
+    align-items: center;
+}
+.phone-icon{
+    font-size:1.2rem;
+}
+.phone-number{
+    margin-left: 3px;
+    font-size: 0.8rem;
+}
+.discount-div{
+    display: none;
+}
+.dropdown-div{
+    position:relative;
+    display: flex;
+    justify-content: space-around;
+    width: 185px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+.dropdown:hover .dropdown-list{
+    display:block;
+}
+.dropdown{
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+}
+.chevron-down{
+    margin-left:10px;
+}
+.dropdown-list{
+    position:absolute;
+    display: none;
+    background-color:hsl(0, 0%, 93%);
+    color:black;
+    top:100%;
+    list-style-type: none;
+}
+.dropdown-list-item{
+    padding:10px;
+    width:60px;
+}
+.dropdown-list-item:hover{
+    background-color: #1C352D;
+    color:white;
+    cursor:pointer;
+}
+.dropdown-2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor:pointer; 
+}
+.dropdown-list-2{
+    position:absolute;
+    display: none;
+    background-color:hsl(0, 0%, 93%);
+    color:black;
+    top:100%;
+    list-style-type: none; 
+}
+.dropdown-2:hover .dropdown-list-2{
+    display:block;
+}
+@media screen and (min-width: 768px) {
+    .extra-nav{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contact-div{
+        padding-left: 45px;
+    }
+    .discount-div{
+        display:flex;
+        justify-content: space-between;
+        width: 300px;
+        font-size: 0.8rem;
+    }
+    .dropdown-div{
+        padding-right:45px;
+        margin: 0;
+    }
+}
