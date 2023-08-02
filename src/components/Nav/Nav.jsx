@@ -1,9 +1,9 @@
 import React from "react";
 import "../../index.css";
 import "./Nav.css";
-import TabletNav from "./TabletNav";
-import MobileNav from "./MobileNav";
-import DesktopNav from "./DesktopNav";
+import TabletNav from "../Nav/Tabletnav";
+import MobileNav from "../Nav/MobileNav";
+import DesktopNav from "../Nav/DesktopNav";
 import logo from "../../assets/63e86ab4c21faa7bc0bd90dd_Logo.svg";
 import { RxHamburgerMenu } from "react-icons/rx";
 export default function Nav() {

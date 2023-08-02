@@ -1,4 +1,4 @@
-import Navlink from "./Navlink";
+import Navlink from "../Nav/Navlink";
 export default function Mobilenav() {
   return (
     <nav className="mobile-nav">
