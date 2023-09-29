@@ -46,6 +46,7 @@
     position: absolute;
     top: 150%;
     background-color: white;
+    z-index: 2;
 }
 .category-dropdown-menu{  
     list-style: none;

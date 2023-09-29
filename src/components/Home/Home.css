@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Work+Sans:wght@500&family=Outfit:wght@500&display=swap');
+
+.home-text-div{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+}
+.product-stage-div{
+    display: none;
+}
+.home-title{
+    font-family: Work Sans;
+    color:#1C352D;
+    font-size: 37px;
+}
+.home-paragraph{
+    font-family:poppins;
+    color:#1C352D;
+}
+.learn-btn{
+    background-color: #1C352D;
+    color: white;
+    padding:15px 30px 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: Outfit;
+    width:85px;
+}
+@media screen and (max-width:280px){
+    .home-text-div{
+        height:350px;
+        padding-right: 18px;
+    }
+    .home-bg{
+        height: 80vh!important;
+    }
+}
+@media screen and (min-width:320px) and (max-width:375px){
+    .home-text-div{
+        height:295px;
+        padding-right: 18px;
+    }
+    .home-bg{
+        height: 75vh !important;;
+    }
+}
+@media screen and (max-width: 540px ){
+    .home-bg{
+        background: linear-gradient(170deg, hsl(207, 83%, 75%) 60%, #dbc293 60%);
+        width: 100%;
+        height:55vh;
+    }
+    .home-div-two{
+        padding:110px 15px 0px 20px;
+    }
+} 
+@media screen and (min-width:768px){
+    .home-bg{
+        background: linear-gradient(170deg, hsl(207, 83%, 75%) 60%, #dbc293 60%);
+        width: 100%;
+        height:55vh;
+    }
+    .home-div-two{
+        padding:170px 190px 0px 20px;
+    }
+    .home-title{
+        font-size: 60px;
+    }
+    .home-paragraph{
+        font-size: 19px;
+    }
+    .home-text-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 330px;
+    }
+    .learn-btn{
+        padding:19px 34px 19px 34px; 
+        font-size:19px ;
+        width:100px
+    }
+}  
+@media screen and (min-width:1024px){
+    .home-bg{
+        height:100vh;
+    }
+    .home-div-two{
+        padding:170px 390px 0px 50px;
+    }
+} 
+@media screen and (min-width:1280px){
+    .home-bg{
+        height:80vh;
+    }
+    .home-div-two{
+        display: flex;
+        padding:0px 0px 0px 40px!important;
+    }
+    .home-text-div{
+        z-index:1;
+        padding-top: 150px;
+        padding-right: 600px;
+    }
+    .home-paragraph{
+        padding-right: 150px;
+    }
+    .product-stage-div{
+        display: block;
+    }
+    .product-stage{
+        position: absolute;
+        right:0px;
+        width:1200px;
+    }
+}
+@media screen and (min-width:1440px){
+    .home-text-div{
+        padding-right: 650px;
+    }
+}
