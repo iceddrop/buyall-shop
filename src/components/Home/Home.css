@@ -27,6 +27,22 @@
     font-family: Outfit;
     width:85px;
 }
+.shoes{
+    position: relative;
+    top:-100px;
+    opacity:0;
+}
+.lugages{
+    position: relative;
+    opacity:0;
+    right:140px;
+    bottom:400px;
+}
+.games{
+    position: relative;
+    opacity: 0;
+    top:-70px;
+}
 @media screen and (max-width:280px){
     .home-text-div{
         height:350px;
@@ -92,7 +108,7 @@
 } 
 @media screen and (min-width:1280px){
     .home-bg{
-        height:80vh;
+        height:90vh;
     }
     .home-div-two{
         display: flex;
@@ -101,7 +117,7 @@
     .home-text-div{
         z-index:1;
         padding-top: 150px;
-        padding-right: 600px;
+        padding-right: 300px;
     }
     .home-paragraph{
         padding-right: 150px;
@@ -116,7 +132,10 @@
     }
 }
 @media screen and (min-width:1440px){
+    .home-bg{
+        height: 90vh !important;
+    }
     .home-text-div{
-        padding-right: 650px;
+        padding-right: 450px;
     }
 }
