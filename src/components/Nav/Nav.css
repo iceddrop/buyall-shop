@@ -21,15 +21,6 @@
     padding: 10px;
     height: 250px;
 }
-.mobile-bg{
-    background-color: white;
-    width: 100%;
-    height: 300px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .tablet-nav{
     display: none;
 }
@@ -125,16 +116,28 @@
    .navlist{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     height: 130px;
     padding-top: 13px;
+    z-index: 1;
+    width: 100%;
+    background-color: white;
    }
    .navlist-2{
+    position: relative;
+    bottom: 13px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     margin-top:13px;
     height: 70px;
+    z-index: 0;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
    }
    .category-dropdown{
     right:-110%;
@@ -144,9 +147,11 @@
     flex-direction: column;
     justify-content: space-between;
     height: 550px;
+    margin-right: 35px;
    }
    .category-sub-div{
     width: 220px;
+    margin-left: 25px;
    }
 }
 @media screen and (min-width:768px){

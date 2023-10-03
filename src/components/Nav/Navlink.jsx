@@ -13,7 +13,7 @@ export default function Navlink() {
     }
     console.log(categoryDrop)
   return (
-    <div className="mobile-bg">
+    <>
       <ul className="navlist">
         <li>
           <div className="category">
@@ -26,7 +26,7 @@ export default function Navlink() {
                 <ul className="category-dropdown-menu">
                   <li>
                     <div className="category-sub-div">
-                      <img src={category} className="" alt="" />
+                      <img src={category} className="" alt="category" />
                       <div className="categories-text-div">
                         <h6 className="popular-categories-products-header">Furniture</h6>
                         <p className="categories-paragraph">240 items available</p>
@@ -98,6 +98,6 @@ export default function Navlink() {
           <p className="cart-text">Cart</p>
         </li>
       </ul>
-    </div>
+    </>
   );
 }
