@@ -127,7 +127,6 @@ export default function Categories(){
         scrollTrigger: {
             trigger:'.category',
             toggleActions: 'play none none reverse',
-            markers:true,
             start: 200,
         },
         delay:1,
