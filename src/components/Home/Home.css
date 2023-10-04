@@ -10,15 +10,24 @@
     display: none;
 }
 .home-title{
+    position: relative;
+    bottom: 120px;
+    opacity: 0;
     font-family: Work Sans;
     color:#1C352D;
     font-size: 37px;
 }
 .home-paragraph{
+    position: relative;
+    bottom: 120px;
+    opacity: 0;
     font-family:poppins;
     color:#1C352D;
 }
 .learn-btn{
+    position: relative;
+    bottom: 120px;
+    opacity: 0;
     background-color: #1C352D;
     color: white;
     padding:15px 30px 15px 30px;
