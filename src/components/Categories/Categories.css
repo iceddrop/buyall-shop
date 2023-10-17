@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Work+Sans:wght@400;500&family=Outfit:wght@500&display=swap');
-.category-div{
-    display: grid;
-    grid-template-columns: auto auto;
-}
+
 .zoom{
     position: relative;
     overflow:hidden;
@@ -21,11 +18,16 @@
     padding: 60px 0px 20px 20px;
     font-weight: bolder;
 }
-@media screen and (max-width:460px){
+@media screen and (max-width:600px){
+    .category-div{
+        display: grid;
+        grid-template-columns: auto auto;
+        padding-left: 8px;
+    }
     .category{
         display: flex;
         flex-direction: column;
-       text-align: center;
+        text-align: center;
     }
     .category-text{
         position: relative;
@@ -41,7 +43,8 @@
         padding-right: 10px;
     }
     .category-div{
-        grid-template-columns: auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto;
     }
     .category{
         display: flex;
@@ -56,20 +59,18 @@
         font-weight: 400;
     }
     .category-image{
-        width: 240px;
+        width: 330px;
     }
 }
 @media screen and (min-width: 1024px){
     .categories-section{
-        padding-left: 15px;
-        padding-right: 15px;
     }
     .category-div{
         display: flex;
         justify-content: space-around;
     }
     .category-image{
-        width:160px;
+        width:200px;
     }
     .category-text{
         position: relative;
@@ -78,6 +79,6 @@
 }
 @media screen and (min-width:1280px){
     .category-image{
-        width:180px;
+        width:300px;
     }
 }

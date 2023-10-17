@@ -11,7 +11,7 @@ export default function Navlink() {
     function dropCategory(){
         setCategoryDrop(preval => !preval);
     }
-    console.log(categoryDrop)
+
   return (
     <>
       <ul className="navlist">

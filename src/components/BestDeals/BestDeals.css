@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Work+Sans:wght@400;500&family=Outfit:wght@500&display=swap');
+.best-deal-section{
+    padding-top: 40px;
+}
+.img-div{
+    height:190px;
+}
+
+.deal-card{
+    width:175px;
+    padding-left: 15px;
+}
+.card-img{
+    width:140px; 
+    height: 190px; 
+}
+.heart-div{
+    position: relative;
+    bottom:160px;
+    left:120px;
+    padding: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.heart-icon{
+    right:30px;
+    font-size: 23px;
+}
+.detail-flex-div{
+    display: flex;
+}
+
+.price-div{
+    display:flex;
+    font-family: Work sans;
+}
+.deal-title{
+    font-family: Work sans;
+    margin-left: 20px;
+}
+.product-name-one{
+    font-family:Work sans;
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.product-name-two{
+    font-family:Work sans;
+    font-size: 17px; 
+}
+.dollar{
+    font-size: 14px;
+}
+.price{
+    font-size:18px;
+    font-weight: bold;
+}
+.specifications-one{
+    font-family: Work sans;
+    font-weight: lighter;
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.specifications-two{
+    font-family: Work sans;
+    font-weight: lighter;
+    padding-top: 10px;
+}
+.ratings-div{
+    display: flex;
+    justify-content: space-between;
+    width:130px;
+    padding-top: 10px;
+}
+.star-icon{
+    color:green;
+    font-size: 20px;
+}
+.rating{
+    font-family: Work sans;
+    font-size: 14px;
+}
+.cart-btn{
+    position: relative;
+    top:30px;
+    border: 2px solid black;
+    font-family: Work sans;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.deal-detail{
+    padding-top: 20px;
+}
+@media screen and (max-width:500px){
+    .cards-div{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 70px;
+        grid-column-gap:10px;
+        justify-content: center;
+        padding-top: 20px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .cards-div{
+        display: flex;
+    }
+}
