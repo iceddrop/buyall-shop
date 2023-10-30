@@ -9,6 +9,7 @@
 .deal-card{
     width:175px;
     padding-left: 15px;
+    margin-top:40px;
 }
 .card-img{
     width:140px; 
@@ -100,6 +101,8 @@
 }
 .deal-detail{
     padding-top: 20px;
+    height:150px;
+    max-height:250px;
 }
 @media screen and (max-width:500px){
     .cards-div{
@@ -114,5 +117,6 @@
 @media screen and (min-width: 768px) {
     .cards-div{
         display: flex;
+        overflow-y: scroll;
     }
 }

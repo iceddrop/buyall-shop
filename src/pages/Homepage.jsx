@@ -4,7 +4,7 @@ import Nav from '../components/Nav/Nav';
 import Home from '../components/Home/Home';
 import Categories from '../components/Categories/Categories';
 import BestDeals from '../components/BestDeals/BestDeals';
-
+import Brands from '../components/Brands/Brands';
 
 export default function Homepage(){
 
@@ -15,6 +15,7 @@ export default function Homepage(){
         <Home/>
         <Categories/>
         <BestDeals/>
+        <Brands/>
       </> 
      )
 }
