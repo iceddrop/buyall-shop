@@ -1,3 +1,16 @@
 .text{
     margin-top:50px;
 }
+.brand-div{
+    display:flex;
+    align-items:center;
+    background-color: whitesmoke;
+}
+@media screen and (max-width:500px){
+    .mother-brand{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height:1000px;
+    }
+}
