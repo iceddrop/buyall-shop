@@ -5,7 +5,7 @@ import Home from '../components/Home/Home';
 import Categories from '../components/Categories/Categories';
 import BestDeals from '../components/BestDeals/BestDeals';
 import Brands from '../components/Brands/Brands';
-
+import Pricing from '../components/Pricing/Pricing';
 export default function Homepage(){
 
      return(
@@ -16,6 +16,7 @@ export default function Homepage(){
         <Categories/>
         <BestDeals/>
         <Brands/>
+        <Pricing/>
       </> 
      )
 }

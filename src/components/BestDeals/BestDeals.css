@@ -43,6 +43,7 @@
 .deal-title{
     font-family: Work sans;
     margin-left: 20px;
+    font-weight: bolder;
 }
 .product-name-one{
     font-family:Work sans;
@@ -104,6 +105,9 @@
     height:150px;
     max-height:250px;
 }
+.swiper{
+    height:450px;
+}
 @media screen and (max-width:500px){
     
     .cards-div{
@@ -121,6 +125,14 @@
         overflow-y: scroll;
     }
     .cart-btn{
-        font-size: 18px;
+        font-size: 14px;
+    }
+    .best-deal-section{
+        padding-left:30px;
+    }
+}
+@media screen and (min-width: 1440px){
+    .best-deal-section{
+        padding-left: 40px;
     }
 }

@@ -4,19 +4,50 @@ import "./BestDeals.css";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Dna } from  'react-loader-spinner'
 export default function BestDeals() {
   const [products, setProducts] = useState([]);
   const [nameIsOpened, setNameIsOpened] = useState(false);
   const [specIsOpened, setSpecIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://fakestoreapi.com/products?limit=5")
+ /* useEffect(() => {
+    fetch("")
       .then((res) => res.json())
       .then((json) => setProducts(json));
-    setLoading(false);
-  });
+      setLoading(true);
+      const getProducts = async () => {
+        try {
+          setLoading(false);
+          const res = await axios.get('https://api.escuelajs.co/api/v1/products');
+          
+          setProducts(res);
+          setLoading(false);
+        } catch (error){
+          setLoading(false);
+          console.error(error);
+        }
+      }
+  });*/
+
+  useEffect(() => {
+    if (!loading) {
+      fetch('https://api.escuelajs.co/api/v1/products')
+        .then(response => response.json())
+        .then(data => {
+          setProducts(data);
+          setLoading(false);
+        })
+        .catch(error => {
+          console.error(error);
+          setLoading(false);
+        });
+
+      setLoading(true);
+    }
+  }, []);
+
+console.log(products)
 
   return (
     <section className="best-deal-section">
@@ -26,61 +57,74 @@ export default function BestDeals() {
         slidesPerView={3}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        className="swiper"
       >
-        {loading ? (
-          <p>jskdjkjdksj</p>
-        ) : (
+        
+ {!loading &&
           <>
-            {products.map((product) => (
-              <SwiperSlide key={product.id} className="deal-card">
-                <div className="img-div">
-                  <img
-                    src={product.image}
-                    className="card-img"
-                    alt="homepod-mini"
-                  />
-                  <div className="heart-div">
-                    <AiOutlineHeart className="heart-icon" />
-                  </div>
+          {products.map((product) => (
+            <SwiperSlide key={product.id} className="deal-card">
+              <div className="img-div">
+                <img
+                  src={product.images[0]}
+                  className="card-img"
+                  alt="homepod-mini"
+                />
+                <div className="heart-div">
+                  <AiOutlineHeart className="heart-icon" />
                 </div>
-                <div className="deal-detail">
-                  <div className="detail-flex-div">
-                    <h3
-                      onClick={() => setNameIsOpened(!nameIsOpened)}
-                      className={
-                        nameIsOpened ? "product-name-two" : "product-name-one"
-                      }
-                    >
-                      {product.title}
-                    </h3>
-                    <div className="price-div">
-                      <h6 className="dollar">$</h6>
-                      <p className="price">{product.price}</p>
-                    </div>
-                  </div>
-                  <p
-                    onClick={() => setSpecIsOpened(!specIsOpened)}
+              </div>
+              <div className="deal-detail">
+                <div className="detail-flex-div">
+                  <h3
+                    onClick={() => setNameIsOpened(!nameIsOpened)}
                     className={
-                      specIsOpened ? "specifications-two" : "specifications-one"
+                      nameIsOpened ? "product-name-two" : "product-name-one"
                     }
                   >
-                    {product.description}
-                  </p>
-                  <div className="ratings-div">
-                    <AiFillStar className="star-icon" />
-                    <AiFillStar className="star-icon" />
-                    <AiFillStar className="star-icon" />
-                    <AiFillStar className="star-icon" />
-                    <AiFillStar className="star-icon" />
-                    <h6 className="rating">{product.rating.count}</h6>
+                    {product.title}
+                  </h3>
+                  <div className="price-div">
+                    <h6 className="dollar">$</h6>
+                    <p className="price">{product.price}</p>
                   </div>
-                  <btn className="cart-btn">Add to Cart</btn>
                 </div>
-              </SwiperSlide>
-            ))}
-          </>
-        )}
+                <p
+                  onClick={() => setSpecIsOpened(!specIsOpened)}
+                  className={
+                    specIsOpened ? "specifications-two" : "specifications-one"
+                  }
+                >
+                  {product.description}
+                </p>
+                <div className="ratings-div">
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <h6 className="rating">{product.title}</h6>
+                </div>
+                <button className="cart-btn">Add to Cart</button>
+              </div>
+            </SwiperSlide>
+          ))}
+        </>
+}
+      
+
+      
       </Swiper>
+      {loading &&
+        <Dna
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="dna-loading"
+        wrapperStyle={{}}
+        wrapperClass="dna-wrapper"
+      />
+      } 
     </section>
   );
 }

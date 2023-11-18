@@ -43,15 +43,15 @@ export default function Brands() {
     },
   ];
   return (
-    <section>
-      <h2>Choose By Brand</h2>
+    <section className="brand-section">
+      <h2 className="section-title">Choose By Brand</h2>
       <div className="mother-brand">
         {brands.map((brand) => (
           <div className="brand-div">
-            <img src={brand.img} alt="staple" />
-            <div>
-              <h4>{brand.name}</h4>
-              <p>Delivery with in {brand.deliveryTime} hours</p>
+            <img className="brand-img" src={brand.img} alt="staple" />
+            <div className="brand-text-div">
+              <h4 className="brand-title">{brand.name}</h4>
+              <p className="delivery-time">Delivery with in {brand.deliveryTime} hours</p>
             </div>
           </div>
         ))}
