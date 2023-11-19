@@ -52,7 +52,7 @@ console.log(products)
   return (
     <section className="best-deal-section">
       <h2 className="deal-title">Todays Best Deals For You!</h2>
-      <Swiper
+     {!loading && <Swiper
         spaceBetween={50}
         slidesPerView={3}
         onSlideChange={() => console.log("slide change")}
@@ -60,7 +60,7 @@ console.log(products)
         className="swiper"
       >
         
- {!loading &&
+ 
           <>
           {products.map((product) => (
             <SwiperSlide key={product.id} className="deal-card">
@@ -110,12 +110,10 @@ console.log(products)
             </SwiperSlide>
           ))}
         </>
-}
-      
-
-      
       </Swiper>
+}
       {loading &&
+      <div className='spinner-div'>
         <Dna
         visible={true}
         height="80"
@@ -124,6 +122,7 @@ console.log(products)
         wrapperStyle={{}}
         wrapperClass="dna-wrapper"
       />
+      </div>
       } 
     </section>
   );
