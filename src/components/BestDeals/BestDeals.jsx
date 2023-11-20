@@ -85,7 +85,7 @@ console.log(products)
                     {product.title}
                   </h3>
                   <div className="price-div">
-                    <h6 className="dollar">$</h6>
+                    <h6 className="dollar pe-3">$</h6>
                     <p className="price">{product.price}</p>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ console.log(products)
                   <AiFillStar className="star-icon" />
                   <AiFillStar className="star-icon" />
                   <AiFillStar className="star-icon" />
-                  <h6 className="rating">{product.title}</h6>
+                  <h6 className="rating">(120)</h6>
                 </div>
                 <button className="cart-btn">Add to Cart</button>
               </div>

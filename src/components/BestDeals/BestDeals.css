@@ -10,10 +10,13 @@
     width:175px;
     padding-left: 15px;
     margin-top:40px;
+    border-radius: 15px;
 }
 .card-img{
     width:140px; 
     height: 190px; 
+    border-radius: 9px;
+
 }
 .heart-div{
     position: relative;
@@ -39,6 +42,7 @@
 .price-div{
     display:flex;
     font-family: Work sans;
+    margin-left:9px;
 }
 .deal-title{
     font-family: Work sans;
@@ -95,10 +99,12 @@
     top:30px;
     border: 2px solid black;
     font-family: Work sans;
-    padding: 12px;
     border-radius: 25px;
-    font-size: 10px;
-    font-weight: 600;
+    font-weight:500;
+    background:white;
+    width:115px;
+    height:45px;
+    font-size:15px;
 }
 .deal-detail{
     padding-top: 20px;
@@ -136,9 +142,15 @@
     .best-deal-section{
         padding-left:30px;
     }
+    .deal-card{
+        background:whitesmoke;
+        padding-top:15px;
+        padding-right:15px;
+    }
 }
 @media screen and (min-width: 1440px){
     .best-deal-section{
         padding-left: 40px;
     }
+
 }
