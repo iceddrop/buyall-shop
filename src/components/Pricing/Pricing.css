@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+.price-section{
+    padding:50px 5px 0px 5px;
+}
+.section-title{
+    padding-left:25px;
+}
 .price-cards-div{
     display: flex;
     flex-direction: column;
@@ -16,6 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items:start;
     padding: 20px;
     height: 150px;
 }
@@ -26,6 +33,7 @@
 }
 .price-div{
     display: flex;
+    align-self:start;
     color:#961f1f;
 }
 .dollar-sign{
@@ -39,8 +47,23 @@
 .paragraph{
     font-family: 'Inter';
 }
-.img-div{
+.price-img-div{
     background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6cd367817e964f756_sofa-min.png');
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+    height:210px;
+}
+@media screen and (min-width:768px){
+    .price-cards-div{
+        display:grid;
+        grid-template-columns:auto auto;
+        grid-column-gap:25px;
+        padding-top:20px;
+    }
+}
+@media screen and (min-width:1024px){
+    .price-cards-div{
+       display:flex;
+       flex-direction:row;
+    }
 }

@@ -24,7 +24,7 @@
         grid-template-columns: auto auto;
         padding-left: 8px;
     }
-    .category{
+    .category-card{
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -49,10 +49,11 @@
         display: grid;
         grid-template-columns: auto auto;
     }
-    .category{
+    .category-card{
         display: flex;
         flex-direction: column;
-       text-align: center;
+        text-align: center;
+        height:400px;
     }
     .category-text{
         position: relative;
@@ -64,11 +65,10 @@
     }
     .category-image{
         width: 330px;
+        border-radius:0;
     }
 }
 @media screen and (min-width: 1024px){
-    .categories-section{
-    }
     .category-div{
         display: flex;
         justify-content: space-around;

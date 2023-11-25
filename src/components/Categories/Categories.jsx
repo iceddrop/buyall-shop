@@ -55,7 +55,7 @@ export default function Categories() {
             categories ?
             <>
             {categories.map((category) => (
-                <div key={category} ref={addToRefs} className="category">
+                <div key={category} ref={addToRefs} className="category-card">
                   <div className="zoom">
                     <img
                       src={bg}

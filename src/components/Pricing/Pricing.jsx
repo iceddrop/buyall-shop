@@ -1,7 +1,7 @@
 import "./Pricing.css"
 export default function Pricing() {
   return (
-    <div>
+    <section className='price-section'>
       <h2 className="section-title">Get Up To 70% Off</h2>
       <div className="price-cards-div">
         <div className="price-card">
@@ -13,7 +13,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="img-div">
+          <div className="price-img-div">
           </div>
         </div>
         <div className="price-card">
@@ -25,7 +25,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="img-div">
+          <div className="price-img-div">
           </div>
         </div>
         <div className="price-card">
@@ -37,7 +37,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="img-div">
+          <div className="price-img-div">
           </div>
         </div>
         <div className="price-card">
@@ -49,10 +49,10 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="img-div">
+          <div className="price-img-div">
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
