@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+.price-cards-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.price-card{
+    background-color:#f9dcdc;
+    border-radius: 12px;
+    margin-bottom: 0;
+    margin-bottom: 20px;
+}
+.text-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 150px;
+}
+.save{
+    font-family: 'Inter', sans-serif;
+    font-size: 21px;
+    color: #333;
+}
+.price-div{
+    display: flex;
+    color:#961f1f;
+}
+.dollar-sign{
+    font-size:25px;
+    font-weight: 900;
+}
+.price-num{
+    font-size: 39px;
+    font-weight: 800;
+}
+.paragraph{
+    font-family: 'Inter';
+}
+.img-div{
+    background-image: url('https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6cd367817e964f756_sofa-min.png');
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
