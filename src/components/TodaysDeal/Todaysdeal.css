@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+.today-title{
+    font-family: Work Sans;
+    padding-bottom: 20px;
+}
+.today-item{
+    border: 2px solid #c5c5c5;
+    border-radius: 23px;
+    padding:13px 20px 13px 20px;
+    font-size:15px;
+     font-family: Work Sans;
+     font-weight: 500;
+     text-align: center;
+     cursor: pointer;
+}
+@media screen and (max-width:600px){
+    .today-section{
+        padding: 35px 20px 35px 20px;
+    }
+    .today-category-list{
+        display:grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 8px;
+        grid-row-gap:12px;
+    }
+}
+@media screen and (min-width:768px){
+    .today-title{
+        padding-bottom: 27px;
+    }
+    .today-section{
+        padding: 60px 35px 60px 35px;
+    }
+    .today-category-list{
+        display: flex;
+        justify-content: space-between;
+        width:60%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .today-title{
+        padding-bottom: 30px;
+    }
+    .today-section{
+        padding: 60px 40px 60px 40px;
+    }
+    .today-category-list{
+        width:49%;
+    } 
+}
+@media screen and (min-width: 1440px){
+    .today-title{
+        padding-bottom: 30px;
+    }
+    .today-section{
+        padding: 80px 0px 80px 60px;
+    }
+    .today-category-list{
+        width:30%;
+    } 
+}

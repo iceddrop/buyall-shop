@@ -6,6 +6,9 @@
 .text{
     margin-top:50px;
 }
+.brand-section{
+    padding: 0px 20px 20px 20px;
+}
 .brand-title{
     font-family:Inter;
     font-size:18px;
@@ -20,9 +23,7 @@
     padding:19px;
     border-radius: 10px;
 }
-.brand-section{
-    padding: 50px 20px 20px 20px;
-}
+
 .brand-text-div{
     display: flex;
     justify-content: space-between;
@@ -46,7 +47,7 @@
         grid-column-gap:20px;
     }
     .brand-section{
-        padding: 70px 40px 0px 40px;
+        padding: 0px 40px 0px 40px;
     }
 }
 @media screen and (min-width:1024px){

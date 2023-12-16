@@ -10,24 +10,7 @@ export default function PopularDeals() {
   const [specIsOpened, setSpecIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
 
- /* useEffect(() => {
-    fetch("")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-      setLoading(true);
-      const getProducts = async () => {
-        try {
-          setLoading(false);
-          const res = await axios.get('https://api.escuelajs.co/api/v1/products');
-          
-          setProducts(res);
-          setLoading(false);
-        } catch (error){
-          setLoading(false);
-          console.error(error);
-        }
-      }
-  });*/
+
 
   useEffect(() => {
     if (!loading) {
@@ -46,7 +29,6 @@ export default function PopularDeals() {
     }
   }, []);
 
-console.log(products)
 
   return (
     <section className="best-deal-section">
@@ -58,8 +40,6 @@ console.log(products)
         onSwiper={(swiper) => console.log(swiper)}
         className="swiper"
       >
-        
- 
           <>
           {products.map((product) => (
             <SwiperSlide key={product.id} className="deal-card">

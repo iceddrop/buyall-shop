@@ -47,7 +47,7 @@ export default function BestDeals() {
     }
   }, []);
 
-console.log(products)
+
 
   return (
     <section className="best-deal-section">

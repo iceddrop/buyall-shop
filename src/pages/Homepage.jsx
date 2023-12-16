@@ -7,6 +7,8 @@ import BestDeals from '../components/BestDeals/BestDeals';
 import Brands from '../components/Brands/Brands';
 import Pricing from '../components/Pricing/Pricing';
 import PopularDeals from '../components/PopularDeals/PopularDeals';
+import Cashback from '../components/Cashback/Cashback';
+import Todaysdeal from '../components/TodaysDeal/Todaysdeal';
 export default function Homepage(){
 
      return(
@@ -14,11 +16,13 @@ export default function Homepage(){
         <Extranav/>
         <Nav/>
         <Home/>
-        <Categories/>
+       {/* <Categories/>*/}
         <BestDeals/>
         <Brands/>
         <Pricing/>
         <PopularDeals/>
+        <Cashback/>
+        <Todaysdeal/>
       </> 
      )
 }
