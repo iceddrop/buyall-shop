@@ -14,6 +14,9 @@
      text-align: center;
      cursor: pointer;
 }
+.today-deal-cards{
+    display: grid;
+}
 @media screen and (max-width:600px){
     .today-section{
         padding: 35px 20px 35px 20px;
@@ -23,6 +26,9 @@
         grid-template-columns: auto auto auto;
         grid-column-gap: 8px;
         grid-row-gap:12px;
+    }
+    .today-deal-cards{
+        grid-template-columns: auto auto;
     }
 }
 @media screen and (min-width:768px){
@@ -36,6 +42,9 @@
         display: flex;
         justify-content: space-between;
         width:60%;
+    }
+    .today-deal-cards{
+        grid-template-columns: 50% 50%;
     }
 }
 @media screen and (min-width: 1024px){
