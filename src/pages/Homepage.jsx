@@ -9,6 +9,7 @@ import Pricing from '../components/Pricing/Pricing';
 import PopularDeals from '../components/PopularDeals/PopularDeals';
 import Cashback from '../components/Cashback/Cashback';
 import Todaysdeal from '../components/TodaysDeal/Todaysdeal';
+import Refund from '../components/Refund/Refund';
 export default function Homepage(){
 
      return(
@@ -23,6 +24,7 @@ export default function Homepage(){
         <PopularDeals/>
         <Cashback/>
         <Todaysdeal/>
+        <Refund/>
       </> 
      )
 }

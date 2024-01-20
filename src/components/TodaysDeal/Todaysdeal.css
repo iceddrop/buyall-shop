@@ -14,12 +14,7 @@
      text-align: center;
      cursor: pointer;
 }
-.today-deal-cards{
-    
-}
-.todays-deal-img{
-   
-}
+
 .todays-deal-card{
    display:flex;
    flex-direction: column;
