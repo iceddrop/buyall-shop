@@ -15,8 +15,45 @@
      cursor: pointer;
 }
 .today-deal-cards{
-    display: grid;
+    
 }
+.todays-deal-img{
+   
+}
+.todays-deal-card{
+   display:flex;
+   flex-direction: column;
+   align-items: center; 
+   padding-top:20px;
+}
+.product-title-two{
+    font-family:Work sans;
+    font-size: 17px;
+}
+.product-title-one{
+    font-family:Work sans;
+    font-size: 17px;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.specifications-desc-two{
+    font-family: Work sans;
+    font-weight: lighter;
+    padding-top: 15px;
+}
+.specifications-desc-one{
+    font-family: Work sans;
+    font-weight: lighter;
+    padding-top: 15px;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+ } /* this can be any value you want */
 @media screen and (max-width:600px){
     .today-section{
         padding: 35px 20px 35px 20px;
@@ -28,7 +65,17 @@
         grid-row-gap:12px;
     }
     .today-deal-cards{
-        grid-template-columns: auto auto;
+       display: flex;
+       overflow:scroll;
+    }
+    .todays-deal-card{
+       padding-left:25px;
+       max-height:400px;
+    }
+    .todays-deal-img{
+        width:150px;
+        height:150px;
+        object-fit:contain;
     }
 }
 @media screen and (min-width:768px){
@@ -41,10 +88,21 @@
     .today-category-list{
         display: flex;
         justify-content: space-between;
-        width:60%;
+        width:70%;
     }
     .today-deal-cards{
-        grid-template-columns: 50% 50%;
+        display:grid;
+        grid-template-columns:auto auto;
+        grid-row-gap: 20px;
+    }
+    .todays-deal-img{
+        width:150px;
+        height:150px;
+        object-fit:contain;
+    }
+    .todays-deal-card{
+        padding-left:25px;
+        max-height:400px;
     }
 }
 @media screen and (min-width: 1024px){
@@ -63,9 +121,12 @@
         padding-bottom: 30px;
     }
     .today-section{
-        padding: 80px 0px 80px 60px;
+        
     }
     .today-category-list{
-        width:30%;
+        width:37%;
     } 
+    .today-deal-cards{
+        grid-column-gap: 30px;
+    }
 }

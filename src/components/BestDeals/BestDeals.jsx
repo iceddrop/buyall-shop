@@ -11,24 +11,6 @@ export default function BestDeals() {
   const [specIsOpened, setSpecIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
 
- /* useEffect(() => {
-    fetch("")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-      setLoading(true);
-      const getProducts = async () => {
-        try {
-          setLoading(false);
-          const res = await axios.get('https://api.escuelajs.co/api/v1/products');
-          
-          setProducts(res);
-          setLoading(false);
-        } catch (error){
-          setLoading(false);
-          console.error(error);
-        }
-      }
-  });*/
 
   useEffect(() => {
     if (!loading) {
