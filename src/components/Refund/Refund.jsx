@@ -3,7 +3,7 @@ export default function Refund(){
     return(
         <section className="refund-section">
             <div className="refund-text-div">
-                <h1 className="refund-title">Get 5% Cash Back</h1>
+                <h1 className="refund-title">Get 5% Cash<span> Back</span></h1>
                 <h6 className="refund-title-two">on Buyall.com</h6>
                 <a href='#' className="cashback-btn">Learn More</a>
             </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700&family=Inter&display=swap');
 .refund-img{
     display: none;
 }
@@ -51,14 +51,34 @@
     }
     .refund-text-div{
         padding-top:20px;
-        height: 80%;
+        height: 90%;
     }
     .refund-title{
         font-size:35px;
     }
     .refund-img{
         display: block;
-        padding-left:23px;
-        transform: rotate(10deg);
+        padding-left:40px;
+        transform: rotate(340deg);
+    }
+    .refund-title span{
+        display:block;
+    }
+}
+@media screen and (min-width:1024px){
+    .refund-section{
+        height:230px;
+        align-items:center;
+        justify-content: space-around;
+        padding-left: 70px;
+        padding-right:70px;
+    }
+    .refund-text-div{
+        padding-top:0;
+        height: 100%;
+    }
+    .refund-title{
+        font-size:50px;
+        font-weight:700;
     }
 }
