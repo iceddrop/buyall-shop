@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+.trending-section {
+  width: 100%;
+}
+.trend-head{
+  padding-left:20px;
+  padding-top:20px;
+  font-family: Work Sans;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+.trend-card {
+  text-align: start;
+  margin-bottom: 30px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+.trend-img-div {
+  background-image: url("https://assets-global.website-files.com/63e857eaeaf853471d5335ff/63e8c4e6cd3678e82164f755_furniture%20village-min.png");
+  height: 200px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.trend-card-title{
+  font-family:Work Sans;
+  padding-top:5px;
+}
+.trend-card-paragraph{
+  font-family:Inter;
+}
+.trend-btn{
+  position: relative;
+  top:18px;
+  background: black;
+  color: white;
+  padding:15px 30px 15px 30px;
+  border-radius:23px;
+  font-family:Inter;
+}
+@media screen and (max-width: 600px) {
+  .trend-flex {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .trend-card{
+     height:370px;
+  }
+  .trend-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:110px;
+    padding-left: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .trend-flex {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .trend-card{
+    width:354px;
+    height: 355px;
+  }
+  .trend-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:110px;
+    padding-left: 20px;
+  }
+}
+@media screen and (min-width:1024px){
+  .trend-card{
+    width:475px;
+    height: 360px;
+  }
+}
+@media screen and (min-width:1440px){
+  .trend-img-div{
+    height:300px;
+  }
+  .trend-card{
+    width:660px;
+    height: 470px;
+  }
+}
