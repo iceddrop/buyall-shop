@@ -16,7 +16,7 @@ export default function Categories() {
       .then((res) => res.json())
       .then((json) => setCategories(json));
   }, []);
-
+  
   const revealRefs = useRef([]);
   revealRefs.current = [];
   useEffect(() => {

@@ -14,7 +14,7 @@ export default function PopularDeals() {
 
   useEffect(() => {
     if (!loading) {
-      fetch('https://api.escuelajs.co/api/v1/products')
+      fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
         .then(data => {
           setProducts(data);
@@ -29,7 +29,7 @@ export default function PopularDeals() {
     }
   }, []);
 
-
+console.log(products)
   return (
     <section className="best-deal-section">
       <h2 className="deal-title">Weekly Popular Products</h2>
@@ -45,7 +45,7 @@ export default function PopularDeals() {
             <SwiperSlide key={product.id} className="deal-card">
               <div className="img-div">
                 <img
-                  src={product.images[0]}
+                  src={product.image}
                   className="card-img"
                   alt="homepod-mini"
                 />

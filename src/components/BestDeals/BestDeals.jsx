@@ -14,7 +14,7 @@ export default function BestDeals() {
 
   useEffect(() => {
     if (!loading) {
-      fetch('https://api.escuelajs.co/api/v1/products')
+      fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
         .then(data => {
           setProducts(data);
@@ -41,14 +41,12 @@ export default function BestDeals() {
         onSwiper={(swiper) => console.log(swiper)}
         className="swiper"
       >
-        
- 
           <>
           {products.map((product) => (
             <SwiperSlide key={product.id} className="deal-card">
               <div className="img-div">
                 <img
-                  src={product.images[0]}
+                  src={product.image}
                   className="card-img"
                   alt="homepod-mini"
                 />

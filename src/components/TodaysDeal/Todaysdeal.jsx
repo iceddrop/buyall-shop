@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineHeart, AiFillStar } from "react-icons/ai";
 import "../TodaysDeal/Todaysdeal.css";
 export default function Todaysdeal() {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("jewelery");
   const [todaysDeal, setTodaysDeal] = useState([]);
   const [nameIsOpened, setNameIsOpened] = useState(false);
   const [specIsOpened, setSpecIsOpened] = useState(false);
