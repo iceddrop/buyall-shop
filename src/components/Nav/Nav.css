@@ -40,12 +40,14 @@
     position: relative;
     display:flex;
     align-items: center;
+    z-index: 3;
 }
 .category-dropdown{
     position: absolute;
     top: 150%;
     background-color: white;
-    z-index: 2;
+    
+    
 }
 .category-dropdown-menu{  
     list-style: none;
@@ -95,11 +97,15 @@
    list-style:none;
    font-family: poppins;
    font-size: 1.1rem;
+   
+   z-index: 2;
 }
 .navlist-2{
     list-style: none;
     font-family: poppins;
     font-size: 1.1rem;
+    
+    z-index: 2;
 }
 .cart-icon{
     margin-right:5px;
@@ -120,7 +126,7 @@
     justify-content: space-between;
     height: 130px;
     padding-top: 13px;
-    z-index: 1;
+    
     width: 100%;
     background-color: white;
    }
@@ -133,7 +139,7 @@
     justify-content: space-between;
     margin-top:13px;
     height: 70px;
-    z-index: 0;
+
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
