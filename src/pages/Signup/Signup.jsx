@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/63e86ab4c21faa7bc0bd90dd_Logo.svg";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
@@ -14,28 +14,54 @@ const Signup = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState();
   const [error, setError] = useState(false);
+  const [validationErr, setValidationErr] = useState({})
   const color = "white";
+  const [message, setMessage] = useState()
+
+  const validateSignup = () => {
+    const errs = {};
+
+    if (!formData.email) {
+      errs.email = "Email is required!";
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+    ) {
+      errs.email = "Email is invalid!";
+    }
+
+    if (!formData.password) {
+      errs.password = "Password is required!";
+    }
+
+    return errs;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { password, email } = formData;
+    const validationErrors = validateSignup();
+    setValidationErr(validationErrors);
     try {
-      setLoading(true);
-      await createUserWithEmailAndPassword(auth, email, password).then(
-        (userCredential) => {
-          const user = userCredential.user;
+      if (Object.keys(validationErrors).length === 0) {
+        setLoading(true);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+         if (userCredential.user) {
+          // Send email verification
+          await sendEmailVerification(userCredential.user);
+          console.log('Verification email sent! Please check your inbox.');
+    
           navigate("/");
         }
-      );
+        
+      }
     } catch (error) {
-      setError(errorMessage);
+      setError(error.message);
       // ..
     } finally {
       setLoading(false);
     }
   };
 
-  console.log(formData);
   return (
     <div className="flex justify-center items-center h-96 pt-40">
       <div className="bg-green-500 flex flex-col rounded-md py-14">
@@ -51,19 +77,21 @@ const Signup = () => {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            className="h-10 pl-2"
+            className="h-10 pl-2 rounded-md"
             placeholder="Type in your Email"
           />
+                <p className="text-red-700">{validationErr.email}</p>
           <label className="font-bold text-white mt-4">Password</label>
           <input
             type="password"
-            className="h-10 pl-2"
+            className="h-10 pl-2 rounded-md"
             placeholder="Type in your password"
             value={formData.password}
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })
             }
           />
+          <p className="text-red-700">{validationErr.password}</p>
           <div className="">
             <button
               type="submit"
