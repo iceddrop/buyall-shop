@@ -13,7 +13,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="price-img-div">
+          <div className="price-img-div mt-10">
           </div>
         </div>
         <div className="price-card">
@@ -25,7 +25,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="price-img-div">
+          <div className="price-img-div mt-10">
           </div>
         </div>
         <div className="price-card">
@@ -37,7 +37,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="price-img-div">
+          <div className="price-img-div mt-10">
           </div>
         </div>
         <div className="price-card">
@@ -49,7 +49,7 @@ export default function Pricing() {
             </div>
             <p className="paragraph">Explore Our Furniture & Home Furnishing Range</p>
           </div>
-          <div className="price-img-div">
+          <div className="price-img-div mt-10">
           </div>
         </div>
       </div>

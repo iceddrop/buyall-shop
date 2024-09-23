@@ -21,45 +21,53 @@ export default function Home() {
       delay: 1,
     });
     gsap.to(lugagesEl.current, {
-        opacity: 1,
-        y:150,
-        ease: "elastic",
-        delay: 1,
-      });
-      gsap.to(gamesEl.current, {
-        opacity: 1,
-        y:120,
-        ease: "elastic",
-        delay: 1,
-      });
-      gsap.to(titleEl.current, {
-         y: 120,
-         opacity:1,
-         delay:1,
-      });
-      gsap.to(paragraphEl.current,{
-        y: 120,
-        opacity:1,
-        delay:1.2,
-      });
-      gsap.to(btnEl.current,{
-        y: 120,
-        opacity: 1,
-        delay:1.4
-      })
+      opacity: 1,
+      y: 150,
+      ease: "elastic",
+      delay: 1,
+    });
+    gsap.to(gamesEl.current, {
+      opacity: 1,
+      y: 120,
+      ease: "elastic",
+      delay: 1,
+    });
+    gsap.to(titleEl.current, {
+      y: 120,
+      opacity: 1,
+      delay: 1,
+    });
+    gsap.to(paragraphEl.current, {
+      y: 120,
+      opacity: 1,
+      delay: 1.2,
+    });
+    gsap.to(btnEl.current, {
+      y: 120,
+      opacity: 1,
+      delay: 1.4,
+    });
   }, []);
   return (
     <section className="home-bg">
       <div className="home-div-two">
         <div className="home-text-div">
-          <h2 ref={titleEl} className="home-title">Shopping And Department Store.</h2>
+          <h2 ref={titleEl} className="home-title">
+            Shopping And Department Store.
+          </h2>
           <p ref={paragraphEl} className="home-paragraph mt-2">
             Shopping is a bit of a relaxing hobby for me, which is sometimes
             troubling for the bank balance.
           </p>
-          <a ref={btnEl} className="learn-btn mt-2" href="#">
-            Learn More
-          </a>
+          <div className="lg:mt-4">
+            <a
+              ref={btnEl}
+              className="bg-green-800 text-white py-2 px-4 rounded-md"
+              href="#"
+            >
+              Learn More
+            </a>
+          </div>
         </div>
         <div className="product-stage-div">
           <img src={stage} className="product-stage" alt="product-stage" />

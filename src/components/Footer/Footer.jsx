@@ -124,15 +124,15 @@ export default function Footer() {
      <div className="footer-div-two">
      <div className="footer-div-three">
        <div className="footer-div-four">
-         <BiBriefcase className="footer-icon" />
+         <BiBriefcase className="text-red-300 mr-2" />
          <a href="#">Seller</a>
        </div>
        <div className="footer-div-four">
-         <CgGift className="footer-icon" />
+         <CgGift className="text-red-300 mr-2" />
          <a href="#">Gift Cards</a>
        </div>
        <div className="footer-div-four">
-         <AiOutlineQuestionCircle className="footer-icon" />
+         <AiOutlineQuestionCircle className="text-red-300 mr-2" />
          <a href="#">Help Center</a>
        </div>
      </div>
