@@ -62,7 +62,7 @@ export default function Home() {
           <div className="lg:mt-4">
             <a
               ref={btnEl}
-              className="bg-green-800 text-white py-2 px-4 rounded-md"
+              className="bg-green-900 text-white py-2 px-4 rounded-md"
               href="#"
             >
               Learn More

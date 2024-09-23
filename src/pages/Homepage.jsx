@@ -10,12 +10,15 @@ import Cashback from '../components/Cashback/Cashback';
 import Todaysdeal from '../components/TodaysDeal/Todaysdeal';
 import Refund from '../components/Refund/Refund';
 import TrendingProducts from '../components/TrendingProducts/TrendingProducts';
-import Footer from '../components/Footer/Footer'
+import Footer from '../components/Footer/Footer';
+import Sidebarcomp from '../components/Sidebar/Sidebar';
 export default function Homepage(){
 
      return(
-      <>
-        <Extranav/>
+      < div className=''>
+      <Sidebarcomp className=''/>
+      <div>
+      <Extranav/>
         <Nav/>
         <Home/>
         <BestDeals/>
@@ -27,6 +30,7 @@ export default function Homepage(){
         <Refund/>
         <TrendingProducts/>
         <Footer/>
-      </> 
+      </div>
+      </div> 
      )
 }
