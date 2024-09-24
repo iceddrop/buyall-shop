@@ -5,10 +5,12 @@ import { FaWallet, FaWifi, FaGift } from "react-icons/fa";
 import { MdWifiCalling3, MdContactPhone } from "react-icons/md";
 import { MdSpaceDashboard } from "react-icons/md";
 import { IoSettings, IoLogOut } from "react-icons/io5";
-import { FaCode, FaChevronCircleRight, FaHistory } from "react-icons/fa";
+import { FaCode,  FaTimes, FaHistory } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import whitelogo from "../../assets/chevron-right.svg";
+import blacklogo from "../../assets/chevron-direction-right-icon.svg"
 const Sidebarcomp = () => {
     
 
@@ -17,11 +19,12 @@ const Sidebarcomp = () => {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
+
     return (
         <>
-            <button className="fixed  sm:hidden " onClick={toggleSidebar}>{isSidebarOpen ? "" : <GiHamburgerMenu className="icon-two" />}</button>
+            <button className="fixed  sm:hidden " onClick={toggleSidebar}>{isSidebarOpen ? <p></p>: <GiHamburgerMenu className="icon-two text-white" />}</button>
             <Sidebar aria-label="Sidebar with content separator example" className={isSidebarOpen ? "fixed w-30 h-full z-10 pb-16 sm:pb-0" : "fixed  w-20 side-bar h-full hidden md:block z-10 pb-16 sm:pb-0"}>
-                <Sidebar.Logo href="#"  imgAlt="afridata logo" className="text-family">{isSidebarOpen ? <span><span className="text-blue-400">AFRI</span>Data</span> : ""} {isSidebarOpen ? <DarkThemeToggle /> : ""} <button onClick={toggleSidebar}>{isSidebarOpen ? '' : <FaChevronCircleRight className="icon-two" />}</button></Sidebar.Logo>
+            <Sidebar.Logo href="#" onClick={toggleSidebar} img={isSidebarOpen ? whitelogo : blacklogo} imgAlt="afridata logo" className="text-family"><button onClick={toggleSidebar}>< FaTimes className={isSidebarOpen ? " ml-28" : "text-white"}/></button></Sidebar.Logo>
                 <Sidebar.Items className="flowbite-sidebar-item-group flex flex-col h-full">
                     <Sidebar.ItemGroup className="text-family flowbite-sidebar-item-group">
                         <Link to="/dashboard">

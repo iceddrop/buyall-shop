@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Work+Sans:wght@500&family=Outfit:wght@500&display=swap');
-.home-bg{
-    
-}
+
 .home-text-div{
     display:flex;
     flex-direction: column;
@@ -57,6 +55,7 @@
     position: relative;
     opacity: 0;
     top:0px;
+    right:140px;
 }
 @media screen and (max-width:280px){
     .home-text-div{

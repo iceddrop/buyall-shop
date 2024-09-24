@@ -83,7 +83,7 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color:#F22952
+    color:black;
 }
 @media screen and (max-width:550px){
     .footer-list{
