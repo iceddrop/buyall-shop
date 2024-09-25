@@ -5,40 +5,29 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Dna } from  'react-loader-spinner';
+import { useGetAllProducts } from "../../store/store";
 export default function BestDeals() {
   const [products, setProducts] = useState([]);
   const [nameIsOpened, setNameIsOpened] = useState(false);
   const [specIsOpened, setSpecIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const {data, execute} = useGetAllProducts();
+  console.log(data)
  
 
   useEffect(() => {
-    if (!loading) {
-      fetch('https://fakestoreapi.com/products')
-        .then(response => response.json())
-        .then(data => {
-          setProducts(data);
-          setLoading(false);
-        })
-        .catch(error => {
-          console.error(error);
-          setLoading(false);
-        });
-
-      setLoading(true);
-    }
+    execute();
   }, []);
 
-
+console.log(products)
   return (
     <section className="best-deal-section">
       <h2 className="deal-title">Todays Best Deals For You!</h2>
      {!loading && <Swiper
         spaceBetween={50}
         slidesPerView={3}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+
+        
         className="swiper"
       >
           <>
