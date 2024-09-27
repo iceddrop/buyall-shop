@@ -22,7 +22,7 @@ const Sidebarcomp = () => {
 
     return (
         <>
-            <button className="fixed  sm:hidden " onClick={toggleSidebar}>{isSidebarOpen ? <p></p>: <GiHamburgerMenu className="icon-two text-white" />}</button>
+            <button className="fixed  sm:hidden " onClick={toggleSidebar}>{isSidebarOpen ? <p></p>: <GiHamburgerMenu className="icon-two text-white mt-4 text-2xl" />}</button>
             <Sidebar aria-label="Sidebar with content separator example" className={isSidebarOpen ? "fixed w-30 h-full z-10 pb-16 sm:pb-0" : "fixed  w-20 side-bar h-full hidden md:block z-10 pb-16 sm:pb-0"}>
             <Sidebar.Logo href="#" onClick={toggleSidebar} img={isSidebarOpen ? whitelogo : blacklogo} imgAlt="afridata logo" className="text-family"><button onClick={toggleSidebar}>< FaTimes className={isSidebarOpen ? " ml-28" : "text-white"}/></button></Sidebar.Logo>
                 <Sidebar.Items className="flowbite-sidebar-item-group flex flex-col h-full">

@@ -14,11 +14,11 @@ export default function Nav() {
     <div className="py-2 px-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-        <RxHamburgerMenu className="" />
+        <RxHamburgerMenu className="text-white" />
         <img src={logo} className="w-24 md:w-40 ml-2 md:ml-4" alt="shop-cart-logo" />
         </div>
         <div className="flex items-center">
-          <input type="text" className="border-solid border-red-700 border-2 mr-4 pl-2 w-36 md:w-48" placeholder="search"/>
+          <input type="text" className="border-solid rounded-xl border-2 mr-4 pl-2 w-36 md:w-48" placeholder="search"/>
           <BsCart4 className="text-2xl"/>
         </div>
       </div>

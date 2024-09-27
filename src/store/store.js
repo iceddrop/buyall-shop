@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import { createSelectors } from './create-selector.js';
 import axios from 'axios';
 
 
@@ -10,6 +9,11 @@ const ProductsData  = {
     data: null,
     errorData: null,
 };
+
+export const useIdStore = create((set) => ({
+  productId: '',
+  changeIdState: (id) => set(() => ({ productId: id })),
+}))
 
 export const useGetAllProducts = create((set) => ({
     ...ProductsData,

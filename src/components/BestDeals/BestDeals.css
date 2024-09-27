@@ -8,7 +8,7 @@
 }
 
 .deal-card{
-    width:175px;
+    width: 1px;
     padding-left: 15px;
     margin-top:40px;
     border-radius: 15px;
@@ -36,10 +36,6 @@
     right:30px;
     font-size: 23px;
 }
-.detail-flex-div{
-    display: flex;
-}
-
 .price-div{
     display:flex;
     font-family: Work sans;
@@ -52,7 +48,8 @@
 }
 .product-name-one{
     font-family:Work sans;
-    font-size: 17px;
+    font-size: 12px;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -146,6 +143,9 @@
         background:whitesmoke;
         padding-top:15px;
         padding-right:15px;
+    }
+    .detail-flex-div{
+        display: flex;
     }
 }
 @media screen and (min-width: 1440px){

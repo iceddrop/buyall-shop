@@ -14,8 +14,8 @@ import Footer from "../components/Footer/Footer";
 import Sidebarcomp from "../components/Sidebar/Sidebar";
 export default function Homepage() {
   return (
-    <div className="">
-      <Sidebarcomp className="" />
+    <div>
+      <Sidebarcomp />
       <div className="md:pl-20">
         <Extranav />
         <Nav />

@@ -55,11 +55,11 @@ export default function Home() {
           <h2 ref={titleEl} className="home-title">
             Shopping And Department Store.
           </h2>
-          <p ref={paragraphEl} className="home-paragraph mt-2">
+          <p ref={paragraphEl} className="home-paragraph mt-2 md:mt-0 lg:mt-2">
             Shopping is a bit of a relaxing hobby for me, which is sometimes
             troubling for the bank balance.
           </p>
-          <div className="lg:mt-4">
+          <div className="md:mt-3 lg:mt-4">
             <a
               ref={btnEl}
               className="bg-green-900 text-white py-2 px-4 rounded-md"
