@@ -11,8 +11,11 @@ const ProductsData  = {
 };
 
 export const useIdStore = create((set) => ({
-  productId: '',
-  changeIdState: (id) => set(() => ({ productId: id })),
+  productId: localStorage.getItem('product-id') || null,
+  changeIdState: (id) => { 
+    localStorage.setItem('product-id', id);
+    set(() => ({ productId: id }));
+  }
 }))
 
 export const useGetAllProducts = create((set) => ({

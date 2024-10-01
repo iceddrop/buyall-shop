@@ -55,7 +55,6 @@ export default function BestDeals() {
                       <p className="price">{product.price}</p>
                     </div>
                   </div>
-                  <p className="specifications-one">{product.description}</p>
                   <div className="ratings-div">
                     <AiFillStar className="star-icon" />
                     <AiFillStar className="star-icon" />
