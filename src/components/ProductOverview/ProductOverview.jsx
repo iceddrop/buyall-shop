@@ -1,30 +1,35 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useIdStore } from "../../store/store";
 import Extranav from "../Extranav/Extranav";
 import Nav from "../Nav/Nav";
 import Sidebarcomp from "../Sidebar/Sidebar";
 import axios from "axios";
-import Cookies from 'js-cookie';
+import "../../App.css";
+import { AiFillStar } from "react-icons/ai";
 
 const ProductOverview = () => {
   const { productId } = useIdStore();
   const [product, setProduct] = useState();
-  
+  const [error, setError] = useState();
+  const [productImg, setProductImg] = useState();
 
   useEffect(() => {
     const getProduct = async () => {
-        try {
-            const response = await axios.get(`https://dummyjson.com/products/${productId}`);
-            setProduct(response)
-        } catch {
-    
-        }     
+      try {
+        const response = await axios.get(
+          `https://dummyjson.com/products/${productId}`
+        );
+        setProduct(response);
+        setProductImg(response?.data?.thumbnail)
+        set
+      } catch (err) {
+        setError(err);
       }
+    };
 
-      getProduct();
-},[])
-console.log(productId)
-console.log(product?.data?.thumbnail)
+    getProduct();
+  }, []);
+  console.log(product);
   return (
     <>
       <Sidebarcomp />
@@ -32,11 +37,46 @@ console.log(product?.data?.thumbnail)
         <Extranav />
         <Nav className />
         <div className="">
-          <div>
-            <img src={product?.data?.thumbnail} alt="product-image"/>
+          <h4 className="text-center header-text-font">
+            {product?.data?.brand}
+          </h4>
+          <div className="md:flex justify-center items-center">
+            <div>
+              <div className="flex justify-center">
+              <img className="w-64 h-64" src={productImg} alt="product-thumbnail" />  
+              </div>
+              <div className="flex justify-around">
+                {product?.data?.images.map((image) => (
+                  <img
+                    className="w-20 h-20 object-contain bg-neutral-200 cursor-pointer "
+                    src={image}
+                    onClick={() => setProductImg(image)}
+                    alt="product-img"
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center items-center mt-10 md:mt-0 pb-16">
+              <div>
+                <h6 className="small-text-font">NGN <span className="font-bold">{product?.data?.price}</span></h6>
+                <p className="small-text-font text-red-600">
+                  {product?.data?.availabilityStatus}
+                </p>
+                <div className="flex">
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <AiFillStar className="star-icon" />
+                  <h6 className="rating">(120)</h6>
+                </div>
+                <buttton className='border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer'>Cart</buttton>
+              </div>
+            </div>
           </div>
-          <div>
-            <p>{product?.data?.description}</p>
+          <div className="pl-4 mt-4">
+            <h4 className="header-text-font">Product description</h4>
+            <p className="small-text-font pt-2 ">{product?.data?.description}</p>
           </div>
         </div>
       </div>
