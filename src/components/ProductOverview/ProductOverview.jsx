@@ -12,7 +12,7 @@ const ProductOverview = () => {
   const [product, setProduct] = useState();
   const [error, setError] = useState();
   const [productImg, setProductImg] = useState();
-
+console.log(productId)
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -29,7 +29,7 @@ const ProductOverview = () => {
 
     getProduct();
   }, []);
-  console.log(product);
+
   return (
     <>
       <Sidebarcomp />

@@ -18,6 +18,14 @@ export const useIdStore = create((set) => ({
   }
 }))
 
+export const useCategoryStore = create((set) => ({
+  productCategory: localStorage.getItem('item-category') || null,
+  changeCategoryState: (category) => {
+    localStorage.setItem('item-category', category);
+    set(() => ({ productCategory : category}))
+  }
+}))
+
 export const useGetAllProducts = create((set) => ({
     ...ProductsData,
     execute: async () => {

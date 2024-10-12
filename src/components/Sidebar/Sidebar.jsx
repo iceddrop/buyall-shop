@@ -1,6 +1,6 @@
 import { Sidebar } from "flowbite-react";
 import { FaWallet} from "react-icons/fa";
-import { IoPhonePortrait, IoLogOut, IoCarSportSharp, IoMale, IoFemale } from "react-icons/io5";
+import { IoPhonePortrait, IoLogOut, IoCarSportSharp, IoMale, IoFemale, IoHome } from "react-icons/io5";
 import { GiDelicatePerfume } from "react-icons/gi";
 import { FaTimes} from "react-icons/fa";
 import { useState } from "react";
@@ -9,8 +9,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import whitelogo from "../../assets/chevron-right.svg";
 import blacklogo from "../../assets/chevron-direction-right-icon.svg";
 import { MdChair } from "react-icons/md";
+import { useCategoryStore } from "../../store/store";
 const Sidebarcomp = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { changeCategoryState} = useCategoryStore();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -46,15 +48,15 @@ const Sidebarcomp = () => {
         </Sidebar.Logo>
         <Sidebar.Items className="flowbite-sidebar-item-group flex flex-col h-full">
           <Sidebar.ItemGroup className="text-family flowbite-sidebar-item-group">
-            <Link to="/fundwallet">
-              <Sidebar.Item className="mt-6 h-16 w-36" icon={FaWallet}>
+            <Link to="/home">
+              <Sidebar.Item className="mt-6 h-16 w-36" icon={IoHome}>
                 {isSidebarOpen ? "Home" : ""}
               </Sidebar.Item>
             </Link>
             <Sidebar.Collapse className="h-16 w-36" icon={IoPhonePortrait} label={isSidebarOpen ? "Technology" : ""}>
-             <Link><Sidebar.Item href="#">Phones</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Laptop</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Tablets</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('smartphones')}>Phones</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('laptops')}>Laptop</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('tablets')}>Tablets</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Sidebar.Collapse className="h-16 w-36" icon={IoCarSportSharp} label={isSidebarOpen ? "Auto" : ""}>
              <Link><Sidebar.Item href="#">Motorcycles</Sidebar.Item></Link>
