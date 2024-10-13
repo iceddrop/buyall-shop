@@ -59,30 +59,30 @@ const Sidebarcomp = () => {
              <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('tablets')}>Tablets</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Sidebar.Collapse className="h-16 w-36" icon={IoCarSportSharp} label={isSidebarOpen ? "Auto" : ""}>
-             <Link><Sidebar.Item href="#">Motorcycles</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Vehicles</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('motorcycle')}>Motorcycles</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('vehicle')}>Vehicles</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Sidebar.Collapse className="h-16 w-36" icon={GiDelicatePerfume} label={isSidebarOpen ? "Cosmetics" : ""}>
-             <Link><Sidebar.Item href="#">Beauty</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Fragrance</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Skin care</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('beauty')}>Beauty</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('fragrances')}>Fragrance</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('skin-care')}>Skin care</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Sidebar.Collapse className="h-16 w-36" icon={MdChair} label={isSidebarOpen ? "Furnishing" : ""}>
-             <Link><Sidebar.Item href="#">Furniture</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Home decorations</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Kitchen accessories</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('furniture')}>Furniture</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('home-decoration')}>Home decorations</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('kitchen-accessories')}>Kitchen accessories</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Sidebar.Collapse className="h-16 w-36" icon={IoMale} label={isSidebarOpen ? "Men" : ""}>
-             <Link><Sidebar.Item href="#">Shirts</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Shoes</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Watches</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('mens-shirts')}>Shirts</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('mens-shoes')}>Shoes</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('mens-watches')}>Watches</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Sidebar.Collapse className="h-16 w-36" icon={IoFemale} label={isSidebarOpen ? "Women" : ""}>
-             <Link><Sidebar.Item href="#">Bags</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Dresses</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Jewellery</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Shoes</Sidebar.Item></Link>
-             <Link><Sidebar.Item href="#">Watches</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('womens-bags')}>Bags</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('womens-dresses')}>Dresses</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('womens-jewellery')}>Jewellery</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('womens-shoes')}>Shoes</Sidebar.Item></Link>
+             <Link to='/category'><Sidebar.Item href="#" onClick={() => changeCategoryState('womens-watches')}>Watches</Sidebar.Item></Link>
             </Sidebar.Collapse>
             <Link to="/">
               <Sidebar.Item

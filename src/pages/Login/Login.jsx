@@ -47,7 +47,7 @@ const Login = () => {
         if (userCredential.user.emailVerified) {
           navigate("/home");
         } else {
-          setError('Email not verified. Please check your inbox.');
+          setError('Verification email sent! Please check your inbox.');
         }
       }
     } catch (error) {

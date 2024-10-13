@@ -9,6 +9,7 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const navigate = useNavigate();
@@ -31,6 +32,8 @@ const Signup = () => {
 
     if (!formData.password) {
       errs.password = "Password is required!";
+    } else if (formData.password != formData.confirmPassword){
+      errs.password = "Password do not match!";
     }
 
     return errs;
@@ -48,7 +51,6 @@ const Signup = () => {
          if (userCredential.user) {
           // Send email verification
           await sendEmailVerification(userCredential.user);
-          console.log('Verification email sent! Please check your inbox.');
     
           navigate("/");
         }
@@ -61,7 +63,7 @@ const Signup = () => {
       setLoading(false);
     }
   };
-
+console.log(formData)
   return (
     <div className="flex justify-center items-center h-96 pt-40">
       <div className="bg-green-500 flex flex-col rounded-md py-14">
@@ -89,6 +91,16 @@ const Signup = () => {
             value={formData.password}
             onChange={(e) =>
               setFormData({ ...formData, password: e.target.value })
+            }
+          />
+           <label className="font-bold text-white mt-4">Confirm Password</label>
+          <input
+            type="password"
+            className="h-10 pl-2 rounded-md"
+            placeholder="Type in your password"
+            value={formData.confirmPassword}
+            onChange={(e) =>
+              setFormData({ ...formData, confirmPassword: e.target.value })
             }
           />
           <p className="text-red-700">{validationErr.password}</p>
