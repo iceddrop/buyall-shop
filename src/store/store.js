@@ -38,3 +38,7 @@ export const useGetAllProducts = create((set) => ({
       }
     }
 }))
+
+export const cart = create((set) => ({
+    
+}))

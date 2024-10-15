@@ -6,12 +6,13 @@ import Homepage from "./pages/Homepage";
 import ProductOverview from "./components/ProductOverview/ProductOverview";
 import CategoryProducts from "./pages/CategoryProducts/CategoryProducts";
 import ProtectedRoute from "./ProtectedRoutes";
+import AuthRoute from "./AuthRoute";
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<AuthRoute element={<Login />} />} />
+        <Route path="/signup" element={<AuthRoute element={<Signup />} />} />
         <Route path="/home" element={<ProtectedRoute element={<Homepage />} />} />
         <Route path="/productoverview" element={<ProductOverview />} />
         <Route path="/category" element={<CategoryProducts />} />

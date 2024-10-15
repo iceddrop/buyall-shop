@@ -38,7 +38,7 @@ const CategoryProducts = () => {
       <Extranav/>
       <Nav/>
     </div>
-    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-0">
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-0 px-2">
       {categoryProducts.map((product) => (
         <div key={product.id} className="md:pl-24" onClick={() => changeIdState(product.id)}>
           <div className="img-div" >

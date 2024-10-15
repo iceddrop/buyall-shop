@@ -7,13 +7,13 @@ import { Dna } from "react-loader-spinner";
 import { useGetAllProducts } from "../../store/store";
 import { useIdStore } from "../../store/store";
 import { Link } from "react-router-dom";
+
 export default function BestDeals() {
-  const [products, setProducts] = useState([]);
   const [nameIsOpened, setNameIsOpened] = useState(false);
-  const [specIsOpened, setSpecIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
   const { data, execute } = useGetAllProducts();
   const { productId, changeIdState } = useIdStore();
+
   
 
   useEffect(() => {
