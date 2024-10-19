@@ -39,6 +39,29 @@ export const useGetAllProducts = create((set) => ({
     }
 }))
 
-export const cart = create((set) => ({
+export const useCartStore = create((set, get) => ({
+  cart: [],
+  
+  // Add an item to the cart
+  addToCart: (item) => set((state) => {
+    const { cart } = get();
+
+    const itemExists = state.cart.find((cartItem) => cartItem.id === item.id);
     
+    if (itemExists) {
+      // If item already exists, increase its quantity
+      return {
+        cart: cart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        ),
+      };
+    } else {
+      // If item is new, add it to the cart with a quantity of 1
+      return {
+        cart: [...cart, { ...item, quantity: 1 }],
+      };
+    }
+  }), 
 }))

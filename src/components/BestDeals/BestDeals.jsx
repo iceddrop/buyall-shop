@@ -7,18 +7,21 @@ import { Dna } from "react-loader-spinner";
 import { useGetAllProducts } from "../../store/store";
 import { useIdStore } from "../../store/store";
 import { Link } from "react-router-dom";
+import { useCartStore } from "../../store/store";
 
 export default function BestDeals() {
   const [nameIsOpened, setNameIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
   const { data, execute } = useGetAllProducts();
   const { productId, changeIdState } = useIdStore();
-
-  
+  const addToCart = useCartStore(state => state.addToCart);
+  const cart = useCartStore(state => state.cart);
 
   useEffect(() => {
     execute();
   }, []);
+
+  console.log(cart)
 
   return (
     <section className="best-deal-section">
@@ -63,7 +66,7 @@ export default function BestDeals() {
                     <AiFillStar className="star-icon" />
                     <h6 className="rating">(120)</h6>
                   </div>
-                  <button className="cart-btn">Add to Cart</button>
+                  <button className="cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
                 </div>
               </SwiperSlide>
             ))}

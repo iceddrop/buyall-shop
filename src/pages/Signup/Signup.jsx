@@ -65,7 +65,7 @@ const Signup = () => {
   };
 console.log(formData)
   return (
-    <div className="flex justify-center items-center h-96 pt-40">
+    <div className="flex justify-center items-center h-96 pt-48">
       <div className="bg-green-500 flex flex-col rounded-md py-14">
         <img src={logo} alt="Shopcart-logo" className="px-20" />
         <form className="flex flex-col px-8">
