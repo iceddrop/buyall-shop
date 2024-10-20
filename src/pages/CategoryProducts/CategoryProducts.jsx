@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Nav from "../../components/Nav/Nav";
 import Extranav from "../../components/Extranav/Extranav";
-import { useCategoryStore, useIdStore } from "../../store/store";
+import { useCategoryStore, useIdStore, useCartStore } from "../../store/store";
 
 const CategoryProducts = () => {
 
@@ -16,7 +16,7 @@ const CategoryProducts = () => {
 
   const {changeIdState} = useIdStore();
 
-  console.log(productCategory)
+  const addToCart = useCartStore(state => state.addToCart);
 
   const getProducts = async () => {
     try {
@@ -69,7 +69,7 @@ const CategoryProducts = () => {
               <AiFillStar className="star-icon" />
               <h6 className="rating">(120)</h6>
             </div>
-            <button className="cart-btn">Add to Cart</button>
+            <button onClick={() => addToCart(product)} className="cart-btn">Add to Cart</button>
           </div>
         </div>
       ))}

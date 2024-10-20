@@ -13,15 +13,14 @@ export default function BestDeals() {
   const [nameIsOpened, setNameIsOpened] = useState(false);
   const [loading, setLoading] = useState(false);
   const { data, execute } = useGetAllProducts();
-  const { productId, changeIdState } = useIdStore();
+  const { changeIdState } = useIdStore();
   const addToCart = useCartStore(state => state.addToCart);
-  const cart = useCartStore(state => state.cart);
 
   useEffect(() => {
     execute();
   }, []);
 
-  console.log(cart)
+
 
   return (
     <section className="best-deal-section">

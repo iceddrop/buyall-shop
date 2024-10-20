@@ -7,6 +7,7 @@ import ProductOverview from "./components/ProductOverview/ProductOverview";
 import CategoryProducts from "./pages/CategoryProducts/CategoryProducts";
 import ProtectedRoute from "./ProtectedRoutes";
 import AuthRoute from "./AuthRoute";
+import CartPage from "./pages/CartPage/CartPage";
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<ProtectedRoute element={<Homepage />} />} />
         <Route path="/productoverview" element={<ProductOverview />} />
         <Route path="/category" element={<CategoryProducts />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </div>
   );

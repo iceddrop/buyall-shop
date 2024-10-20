@@ -7,6 +7,7 @@ import "../../App.css";
 import { AiFillStar } from "react-icons/ai";
 import { PacmanLoader } from "react-spinners";
 import { getProductsInstance } from "../../api/axiosInstance";
+import { useCartStore } from "../../store/store";
 
 const ProductOverview = () => {
   const { productId } = useIdStore();
@@ -14,6 +15,7 @@ const ProductOverview = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState();
   const [productImg, setProductImg] = useState();
+  const addToCart = useCartStore(state => state.addToCart);
   const color = "black";
   console.log(productId);
   useEffect(() => {
@@ -90,7 +92,7 @@ const ProductOverview = () => {
                     <AiFillStar className="star-icon" />
                     <h6 className="rating">(120)</h6>
                   </div>
-                  <buttton className="border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer">
+                  <buttton onClick={() => addToCart(product)} className="border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer">
                     Cart
                   </buttton>
                 </div>
