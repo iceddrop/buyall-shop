@@ -39,7 +39,7 @@ const ProductOverview = () => {
       <Sidebarcomp />
       <div className="md:pl-20">
         <Extranav />
-        <Nav className />
+        <Nav />
         {loading ? (
           <div className="flex justify-center">
           <PacmanLoader

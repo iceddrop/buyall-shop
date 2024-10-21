@@ -39,29 +39,44 @@ export const useGetAllProducts = create((set) => ({
     }
 }))
 
+const getCartFromLocalStorage = () => {
+  const cart = localStorage.getItem('cart');
+  try {
+    return cart ? JSON.parse(cart) : [];
+  } catch (e) {
+    return []; // Return empty array if parsing fails
+  }
+};
+
 export const useCartStore = create((set, get) => ({
-  cart: [],
-  
+  // Initialize cart using getCartFromLocalStorage()
+  cart: getCartFromLocalStorage(),
+
   // Add an item to the cart
   addToCart: (item) => set((state) => {
-    const { cart } = get();
+    const { cart } = state; // Access current state directly
 
-    const itemExists = state.cart.find((cartItem) => cartItem.id === item.id);
+    // Check if item already exists in the cart
+    const itemExists = cart.find((cartItem) => cartItem.id === item.id);
     
+    let newCart;
+
     if (itemExists) {
-      // If item already exists, increase its quantity
-      return {
-        cart: cart.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        ),
-      };
+      // If item exists, update its quantity
+      newCart = cart.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+      );
     } else {
-      // If item is new, add it to the cart with a quantity of 1
-      return {
-        cart: [...cart, { ...item, quantity: 1 }],
-      };
+      // If item is new, add it with quantity 1
+      newCart = [...cart, { ...item, quantity: 1 }];
     }
-  }), 
-}))
+
+    // Update localStorage with the new cart state
+    localStorage.setItem('cart', JSON.stringify(newCart));
+
+    // Update state with the new cart
+    return { cart: newCart };
+  }),
+}));
