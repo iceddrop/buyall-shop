@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   const cart = useCartStore((state) => state.cart);
 
-  console.log(cart.length);
-
   return (
     <div className="py-2 px-5">
       <div className="flex items-center justify-between">

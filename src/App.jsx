@@ -8,6 +8,7 @@ import CategoryProducts from "./pages/CategoryProducts/CategoryProducts";
 import ProtectedRoute from "./ProtectedRoutes";
 import AuthRoute from "./AuthRoute";
 import CartPage from "./pages/CartPage/CartPage";
+import CartOverview from "./pages/CartPage/CartOverview";
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<ProtectedRoute element={<Homepage />} />} />
         <Route path="/productoverview" element={<ProductOverview />} />
+        <Route path="/cartoverview" element={<CartOverview />} />
         <Route path="/category" element={<CategoryProducts />} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>

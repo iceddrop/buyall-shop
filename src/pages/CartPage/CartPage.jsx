@@ -28,7 +28,7 @@ const CartPage = () => {
               <div className="deal-detail">
                 <div className="detail-flex-div">
                   <h3 className="product-name-one">
-                    <Link to="/productoverview">{product.title}</Link>
+                    <Link to="/cartoverview">{product.title}</Link>
                   </h3>
                   <div className="price-div">
                     <h6 className="dollar pe-3">$</h6>
