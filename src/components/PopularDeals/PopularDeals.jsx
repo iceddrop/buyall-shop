@@ -29,15 +29,13 @@ export default function PopularDeals() {
     }
   }, []);
 
-console.log(products)
+
   return (
     <section className="best-deal-section">
       <h2 className="deal-title">Weekly Popular Products</h2>
      {!loading && <Swiper
         spaceBetween={50}
         slidesPerView={3}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         className="swiper"
       >
           <>
