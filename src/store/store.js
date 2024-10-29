@@ -75,8 +75,23 @@ export const useCartStore = create((set, get) => ({
 
     // Update localStorage with the new cart state
     localStorage.setItem('cart', JSON.stringify(newCart));
+    alert('Item added to cart')
 
     // Update state with the new cart
     return { cart: newCart };
   }),
+
+  removeFromCart: (item) => set((state) => {
+    
+    const { cart } = state;
+
+    const itemExists = cart.find((cartItem) => cartItem.id === item.id);
+
+    // Remove item if it exists in the cart
+    const newCart = itemExists 
+        ? cart.filter((cartItem) => cartItem.id !== item.id)
+        : cart;
+
+    return { cart: newCart };
+})
 }));

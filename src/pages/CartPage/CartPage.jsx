@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import { useCartStore } from "../../store/store";
+import { useCartStore, useIdStore } from "../../store/store";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import Sidebarcomp from "../../components/Sidebar/Sidebar";
 import Extranav from "../../components/Extranav/Extranav";
 import Nav from "../../components/Nav/Nav";
 const CartPage = () => {
   const cart = useCartStore((state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const { changeIdState } = useIdStore();
+
   return (
     <>
       <Sidebarcomp />
@@ -14,10 +17,10 @@ const CartPage = () => {
         <Nav/>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-0 px-2">
           {cart.map((product) => (
-            <div key={product.id} className="md:pl-24">
+            <div key={product.id} className="md:pl-24"  onClick={() => changeIdState(product.id)}>
               <div className="img-div">
                 <img
-                  src={product.images[0]}
+                  src={product.thumbnail}
                   className="card-img"
                   alt="homepod-mini"
                 />
@@ -43,7 +46,7 @@ const CartPage = () => {
                   <AiFillStar className="star-icon" />
                   <h6 className="rating">(120)</h6>
                 </div>
-                <button className="cart-btn">Remove</button>
+                <button className="cart-btn" onClick={() => removeFromCart()}>Remove</button>
               </div>
             </div>
           ))}

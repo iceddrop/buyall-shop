@@ -8,6 +8,7 @@ import { AiFillStar } from "react-icons/ai";
 import { PacmanLoader } from "react-spinners";
 import { getProductsInstance } from "../../api/axiosInstance";
 import { useCartStore } from "../../store/store";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const CartOverview = () => {
   const { productId } = useIdStore();
@@ -15,7 +16,7 @@ const CartOverview = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState();
   const [productImg, setProductImg] = useState();
-  const addToCart = useCartStore(state => state.addToCart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
   const color = "black";
 
   useEffect(() => {
@@ -42,13 +43,13 @@ const CartOverview = () => {
         <Nav />
         {loading ? (
           <div className="flex justify-center">
-          <PacmanLoader
-            color={color}
-            loading={loading}
-            size={30}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
+            <PacmanLoader
+              color={color}
+              loading={loading}
+              size={30}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
           </div>
         ) : (
           <div className="">
@@ -92,9 +93,20 @@ const CartOverview = () => {
                     <AiFillStar className="star-icon" />
                     <h6 className="rating">(120)</h6>
                   </div>
-                  <buttton onClick={() => addToCart(product)} className="border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer">
-                    Cart
-                  </buttton>
+                  <div className="flex flex-col justify-around h-26">
+                    <div className="flex items-center justify-center mt-4 border-solid border-1 border-gray-100">
+                       <FaPlus className="mx-4 cursor-pointer"/>
+                       <p>2</p>
+                       <FaMinus className="mx-4 cursor-pointer"/>
+                    </div>
+                    <buttton
+                      onClick={() => removeFromCart(product)}
+                      className="border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer"
+                    >
+                      Remove from cart
+                    </buttton>
+                    <button className="bg-green-600 text-white py-1 rounded-sm mt-6">Checkout</button>
+                  </div>
                 </div>
               </div>
             </div>
