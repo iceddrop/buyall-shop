@@ -23,9 +23,7 @@ export default function Homepage() {
         <BestDeals />
         <Brands />
         <Pricing />
-        <PopularDeals />
         <Cashback />
-        <Todaysdeal />
         <Refund />
         <TrendingProducts />
         <Footer />
