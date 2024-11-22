@@ -49,7 +49,7 @@ export default function Nav() {
           <RxHamburgerMenu className="text-white" />
           <img
             src={logo}
-            className="w-24 md:w-40 ml-2 md:ml-4"
+            className="w-24 md:w-40  md:ml-4 mr-4 md:mr-0"
             alt="shop-cart-logo"
           />
         </div>

@@ -18,7 +18,7 @@ const CartPage = () => {
       <div className="md:pl-20">
         <Extranav/>
         <Nav/>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-0 px-2">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-0 px-4 md:px-2">
           {cart.map((product) => (
             <div key={product.id} className="md:pl-24"  onClick={() => changeIdState(product.id)}>
               <div className="img-div">
