@@ -24,6 +24,7 @@ const ProductOverview = () => {
         setLoading(true);
         const response = await getProductsInstance.get(`/${productId}`);
         setProduct(response);
+        console.log(response);
         setProductImg(response?.data?.thumbnail);
         setLoading(false);
       } catch (err) {

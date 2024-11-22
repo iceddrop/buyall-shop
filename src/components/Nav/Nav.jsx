@@ -16,27 +16,22 @@ import {
 } from "@headlessui/react";
 import clsx from "clsx";
 import { useState } from "react";
+import { useIdStore } from "../../store/store";
 export default function Nav() {
   const cart = useCartStore((state) => state.cart);
   const [query, setQuery] = useState("");
+  const { changeIdState } = useIdStore();
 
   const searchResult = async () => {
     try {
       const response = await getProductsInstance.get(`/search?q=${query}`);
-      console.log(response);
       setPeople(response.data.products);
     } catch (err) {
       console.error(err);
     }
   };
 
-  const [people, setPeople] = useState([
-    { id: 1, title: "Tom Cook" },
-    { id: 2, title: "Wade Cooper" },
-    { id: 3, title: "Tanya Fox" },
-    { id: 4, title: "Arlene Mccoy" },
-    { id: 5, title: "Devon Webb" },
-  ]);
+  const [people, setPeople] = useState([{ id: 1, title: "search product" }]);
 
   const filteredPeople =
     query === ""
@@ -45,7 +40,7 @@ export default function Nav() {
           return person.title.toLowerCase().includes(query.toLowerCase());
         });
 
-  const [selected, setSelected] = useState(people[1]);
+  const [selected, setSelected] = useState(people[0]);
 
   return (
     <div className="py-2 px-5">
@@ -74,7 +69,7 @@ export default function Nav() {
                   displayValue={(person) => person?.title}
                   onChange={(event) => {
                     setQuery(event.target.value);
-                    searchResult()
+                    searchResult();
                   }}
                 />
                 <ComboboxButton className="group absolute inset-y-0 right-0 px-2.5"></ComboboxButton>
@@ -89,13 +84,18 @@ export default function Nav() {
                 )}
               >
                 {filteredPeople.map((person) => (
+                                    <Link to="/productoverview">
                   <ComboboxOption
                     key={person.id}
+                    onClick={() => changeIdState(person.id)}
                     value={person}
                     className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-black/60 "
                   >
-                    <div className="text-sm/6 text-black">{person.title}</div>
+  
+                      <div className="text-sm/6 text-black">{person.title}</div>
+       
                   </ComboboxOption>
+                  </Link>
                 ))}
               </ComboboxOptions>
             </Combobox>
