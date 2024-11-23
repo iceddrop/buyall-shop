@@ -4,10 +4,12 @@ import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import Sidebarcomp from "../../components/Sidebar/Sidebar";
 import Extranav from "../../components/Extranav/Extranav";
 import Nav from "../../components/Nav/Nav";
+
 const CartPage = () => {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const { changeIdState } = useIdStore();
+
 
   console.log(cart)
  
