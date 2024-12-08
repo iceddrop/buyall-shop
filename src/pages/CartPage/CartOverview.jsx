@@ -10,6 +10,7 @@ import { getProductsInstance } from "../../api/axiosInstance";
 import { useCartStore } from "../../store/store";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
+import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 
 const CartOverview = () => {
   const { productId } = useIdStore();
@@ -19,6 +20,13 @@ const CartOverview = () => {
   const [productImg, setProductImg] = useState();
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const color = "black";
+  const [openModal, setOpenModal] = useState(true);
+  const [email, setEmail] = useState('');
+
+  function onCloseModal() {
+    setOpenModal(false);
+    setEmail('');
+  }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -39,7 +47,7 @@ const CartOverview = () => {
   const config = {
     public_key: 'FLWPUBK-**************************-X',
     tx_ref: Date.now(),
-    amount: 100,
+    amount: product?.data?.price,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
@@ -135,8 +143,8 @@ const CartOverview = () => {
                     >
                       Remove from cart
                     </buttton>
-                    <button className="bg-green-600 text-white py-1 rounded-sm mt-6">
-                    <FlutterWaveButton {...fwConfig} />
+                    <button onClick={() => setOpenModal(true)} className="bg-green-600 text-white py-1 rounded-sm mt-6">
+                       Checkout
                     </button>
                   </div>
                 </div>
@@ -150,6 +158,47 @@ const CartOverview = () => {
             </div>
           </div>
         )}
+        <Modal show={openModal} size="md" onClose={onCloseModal} popup>
+        <Modal.Header />
+        <Modal.Body>
+          <div className="space-y-6">
+            <h3 className="text-xl font-medium text-gray-900 dark:text-white">Checkout with Flutterwave</h3>
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="email" value="Your email" />
+              </div>
+              <TextInput
+                id="email"
+                placeholder="name@company.com"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="password" value="Name" />
+              </div>
+              <TextInput id="password" type="password" required />
+            </div>
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="email" value="Phone Number" />
+              </div>
+              <TextInput
+                id="email"
+                placeholder="name@company.com"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+            </div> 
+            <div className="w-full">
+              <Button> <FlutterWaveButton {...fwConfig} /></Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
       </div>
     </>
   );

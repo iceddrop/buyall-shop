@@ -17,14 +17,14 @@ const ProductOverview = () => {
   const [productImg, setProductImg] = useState();
   const addToCart = useCartStore(state => state.addToCart);
   const color = "black";
-  console.log(productId);
+
   useEffect(() => {
     const getProduct = async () => {
       try {
         setLoading(true);
         const response = await getProductsInstance.get(`/${productId}`);
         setProduct(response);
-        console.log(response);
+ 
         setProductImg(response?.data?.thumbnail);
         setLoading(false);
       } catch (err) {
@@ -69,6 +69,7 @@ const ProductOverview = () => {
                   {product?.data?.images.map((image) => (
                     <img
                       className="w-20 h-20 object-contain bg-neutral-200 cursor-pointer "
+                      key={product.id}
                       src={image}
                       onClick={() => setProductImg(image)}
                       alt="product-img"

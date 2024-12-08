@@ -84,17 +84,15 @@ export default function Nav() {
                 )}
               >
                 {filteredPeople.map((person) => (
-                                    <Link to="/productoverview">
-                  <ComboboxOption
-                    key={person.id}
-                    onClick={() => changeIdState(person.id)}
-                    value={person}
-                    className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-black/60 "
-                  >
-  
+                  <Link to="/productoverview">
+                    <ComboboxOption
+                      key={person.id}
+                      onClick={() => changeIdState(person.id)}
+                      value={person}
+                      className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-black/60 "
+                    >
                       <div className="text-sm/6 text-black">{person.title}</div>
-       
-                  </ComboboxOption>
+                    </ComboboxOption>
                   </Link>
                 ))}
               </ComboboxOptions>

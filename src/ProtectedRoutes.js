@@ -3,6 +3,7 @@ import useAuth from './useAuth';
 
 const ProtectedRoute = ({ element: Component }) => {
   const { user, loading } = useAuth();
+
   const navigate = useNavigate()
 
  

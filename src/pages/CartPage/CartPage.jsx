@@ -8,12 +8,9 @@ import Nav from "../../components/Nav/Nav";
 const CartPage = () => {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const { changeIdState } = useIdStore();
+  const { changeIdState } = useIdStore(); 
 
-
-  console.log(cart)
- 
-
+  console.log(cart.map((product) => product.id))
   return (
     <>
       <Sidebarcomp />
