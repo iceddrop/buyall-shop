@@ -17,11 +17,10 @@ const useAuth = () => {
         // Set a timer for session expiration
         const sessionDuration = 30 * 60 * 1000; // 30 minutes
         const timer = setTimeout(() => {
-          auth
-            .signOut()
+          auth.signOut()
             .then(() => {
               console.log("User signed out after session expiration.");
-              navigate("/"); // Redirect to login or homepage after sign out
+              navigate("/");
             })
             .catch((error) => {
               console.error("Error signing out:", error);

@@ -1,5 +1,4 @@
 import { Sidebar } from "flowbite-react";
-import { FaWallet} from "react-icons/fa";
 import { IoPhonePortrait, IoLogOut, IoCarSportSharp, IoMale, IoFemale, IoHome } from "react-icons/io5";
 import { GiDelicatePerfume } from "react-icons/gi";
 import { FaTimes} from "react-icons/fa";

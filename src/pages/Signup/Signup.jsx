@@ -49,9 +49,11 @@ const Signup = () => {
         setLoading(true);
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
          if (userCredential.user) {
+
           // Send email verification
           await sendEmailVerification(userCredential.user);
-    
+
+          //navigate to login page
           navigate("/");
         }
         
@@ -63,7 +65,7 @@ const Signup = () => {
       setLoading(false);
     }
   };
-console.log(formData)
+
   return (
     <div className="flex justify-center items-center h-96 pt-48">
       <div className="bg-green-500 flex flex-col rounded-md py-14">

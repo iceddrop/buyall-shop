@@ -24,7 +24,6 @@ const ProductOverview = () => {
         setLoading(true);
         const response = await getProductsInstance.get(`/${productId}`);
         setProduct(response);
- 
         setProductImg(response?.data?.thumbnail);
         setLoading(false);
       } catch (err) {
@@ -94,7 +93,7 @@ const ProductOverview = () => {
                     <AiFillStar className="star-icon" />
                     <h6 className="rating">(120)</h6>
                   </div>
-                  <buttton onClick={() => addToCart(product)} className="border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer">
+                  <buttton onClick={() => addToCart(product.data)} className="border-solid border-2 border-black px-8 py-1 relative top-4 rounded-md cursor-pointer">
                     Cart
                   </buttton>
                 </div>

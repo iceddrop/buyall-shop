@@ -12,13 +12,14 @@ export const router = createBrowserRouter([
         path: "/",
         element: <App />,
         children: [
-            { path: "", element: <Login /> },
-            { path: "/home", element: <Homepage /> },
-            { path: "/signup", element: <Signup /> },
-            { path: "/productoverview", element: <ProductOverview /> },
-            { path: "/cartoverview", element: <CartOverview/> },
-            {path: "/category", element: <CategoryProducts/>},
-            {path: "/cart", element: <CartPage/>}
+          { index: true, element: <Login /> }, 
+          { path: "home", element: <Homepage /> },
+          { path: "signup", element: <Signup /> },
+          { path: "productoverview", element: <ProductOverview /> },
+          { path: "cartoverview", element: <CartOverview /> },
+          { path: "category", element: <CategoryProducts /> },
+          { path: "cart", element: <CartPage /> },
+          { path: "*", element: <div>Page Not Found</div> },
         ],
-    },
+      },
 ]);
