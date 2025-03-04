@@ -7,11 +7,10 @@ const ProtectedRoute = ({ element: Component }) => {
 
   const navigate = useNavigate()
 
- useEffect(() => {
+
   if (!user) {
     navigate('/')
  }
- }, [])
  
 
 
