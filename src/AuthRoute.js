@@ -8,8 +8,8 @@ const AuthRoute = ({ element: Component }) => {
   
   const navigate = useNavigate()
 
-  if (user) {
-    navigate('/home')
+  if (!user) {
+    navigate('/')
   }
 
   return Component;

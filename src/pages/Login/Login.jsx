@@ -49,7 +49,7 @@ const Login = () => {
           password
         );
         if (userCredential.user.emailVerified) {
-          navigate("/");
+          navigate("/home");
         } else {
           setError("Verification email sent! Please check your inbox.");
         }

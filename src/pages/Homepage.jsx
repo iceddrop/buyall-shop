@@ -12,7 +12,12 @@ import Refund from "../components/Refund/Refund";
 import TrendingProducts from "../components/TrendingProducts/TrendingProducts";
 import Footer from "../components/Footer/Footer";
 import Sidebarcomp from "../components/Sidebar/Sidebar";
+import useAuth from "../useAuth";
 export default function Homepage() {
+
+  const {user} = useAuth();
+
+  console.log(user)
   return (
     <div>
       <Sidebarcomp />

@@ -8,7 +8,7 @@ const ProtectedRoute = ({ element: Component }) => {
   const navigate = useNavigate()
 
 
-  if (!user) {
+  if (!user?.emailVerified) {
     navigate('/')
  }
  
