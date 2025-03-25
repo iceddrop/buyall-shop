@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<AuthRoute element={<Login />} />} />
+        <Route path="/" element={ <Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<ProtectedRoute element={<Homepage />} />} />
         <Route path="/productoverview" element={<ProductOverview />} />
