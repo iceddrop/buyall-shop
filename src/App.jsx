@@ -6,7 +6,7 @@ import Homepage from "./pages/Homepage";
 import ProductOverview from "./components/ProductOverview/ProductOverview";
 import CategoryProducts from "./pages/CategoryProducts/CategoryProducts";
 import ProtectedRoute from "./ProtectedRoutes";
-import AuthRoute from "./AuthRoute";
+import SuccessPage from "./pages/Orderstatus/SuccessPage";
 import CartPage from "./pages/CartPage/CartPage";
 import CartOverview from "./pages/CartPage/CartOverview";
 function App() {
@@ -20,6 +20,7 @@ function App() {
         <Route path="/cartoverview" element={<CartOverview />} />
         <Route path="/category" element={<CategoryProducts />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/ordersuccess" element={<SuccessPage />} />
       </Routes>
     </div>
   );

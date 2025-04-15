@@ -9,8 +9,9 @@ import { PacmanLoader } from "react-spinners";
 import { getProductsInstance } from "../../api/axiosInstance";
 import { useCartStore } from "../../store/store";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
+import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 const CartOverview = () => {
   const { productId } = useIdStore();
@@ -20,12 +21,14 @@ const CartOverview = () => {
   const [productImg, setProductImg] = useState();
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const color = "black";
-  const [openModal, setOpenModal] = useState(true);
-  const [email, setEmail] = useState('');
-
+  const [openModal, setOpenModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
   function onCloseModal() {
     setOpenModal(false);
-    setEmail('');
+    setEmail("");
   }
 
   useEffect(() => {
@@ -45,30 +48,33 @@ const CartOverview = () => {
   }, []);
 
   const config = {
-    public_key: 'FLWPUBK-**************************-X',
+    public_key: import.meta.env.VITE_PUBLIC_KEY,
     tx_ref: Date.now(),
     amount: product?.data?.price,
-    currency: 'NGN',
-    payment_options: 'card,mobilemoney,ussd',
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: 'user@gmail.com',
-      phone_number: '070********',
-      name: 'john doe',
+      email: email,
+      phone_number: phone,
+      name: name,
     },
     customizations: {
-      title: 'My store',
-      description: 'Payment for items in cart',
-      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+      title: "Shopcart",
+      description: "Payment for items in cart",
+      logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
     },
   };
 
-  
   const fwConfig = {
     ...config,
-    text: 'Pay with Flutterwave!',
+    text: "Pay with Flutterwave!",
     callback: (response) => {
-       console.log(response);
-      closePaymentModal() // this will close the modal programmatically
+      closePaymentModal();
+      if (response.status === "successful") {
+        navigate("/home");
+      } else {
+        alert("Payment was not successful.");
+      }
     },
     onClose: () => {},
   };
@@ -143,8 +149,11 @@ const CartOverview = () => {
                     >
                       Remove from cart
                     </buttton>
-                    <button onClick={() => setOpenModal(true)} className="bg-green-600 text-white py-1 rounded-sm mt-6">
-                       Checkout
+                    <button
+                      onClick={() => setOpenModal(true)}
+                      className="bg-green-600 text-white py-1 rounded-sm mt-6"
+                    >
+                      Checkout
                     </button>
                   </div>
                 </div>
@@ -159,46 +168,57 @@ const CartOverview = () => {
           </div>
         )}
         <Modal show={openModal} size="md" onClose={onCloseModal} popup>
-        <Modal.Header />
-        <Modal.Body>
-          <div className="space-y-6">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white">Checkout with Flutterwave</h3>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="email" value="Your email" />
+          <Modal.Header />
+          <Modal.Body>
+            <div className="space-y-6">
+              <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+                Checkout with Flutterwave
+              </h3>
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="email" value="Your email" />
+                </div>
+                <TextInput
+                  id="email"
+                  placeholder="name@company.com"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  required
+                />
               </div>
-              <TextInput
-                id="email"
-                placeholder="name@company.com"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="password" value="Name" />
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="password" value="Name" />
+                </div>
+                <TextInput
+                  id="name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  type="name"
+                  required
+                />
               </div>
-              <TextInput id="password" type="password" required />
-            </div>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="email" value="Phone Number" />
+              <div>
+                <div className="mb-2 block">
+                  <Label htmlFor="email" value="Phone Number" />
+                </div>
+                <TextInput
+                  id="phone"
+                  placeholder="+234"
+                  value={phone}
+                  onChange={(event) => setPhone(event.target.value)}
+                  required
+                />
               </div>
-              <TextInput
-                id="email"
-                placeholder="name@company.com"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              />
-            </div> 
-            <div className="w-full">
-              <Button> <FlutterWaveButton {...fwConfig} /></Button>
+              <div className="w-full">
+                <Button>
+                  {" "}
+                  <FlutterWaveButton {...fwConfig} />
+                </Button>
+              </div>
             </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+          </Modal.Body>
+        </Modal>
       </div>
     </>
   );

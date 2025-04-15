@@ -7,6 +7,7 @@ import ProductOverview from "./ProductOverview/ProductOverview";
 import CategoryProducts from "../pages/CategoryProducts/CategoryProducts";
 import CartPage from "../pages/CartPage/CartPage";
 import CartOverview from "../pages/CartPage/CartOverview";
+import SuccessPage from "../pages/Orderstatus/SuccessPage";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
           { path: "cartoverview", element: <CartOverview /> },
           { path: "category", element: <CategoryProducts /> },
           { path: "cart", element: <CartPage /> },
+          {path: "ordersuccess", element: <SuccessPage />},
           { path: "*", element: <div>Page Not Found</div> },
         ],
       },
