@@ -21,7 +21,6 @@ const CategoryProducts = () => {
   const getProducts = async () => {
     try {
       const response = await getProductsInstance.get(`/category/${productCategory}`);
-      console.log(response);
       setCategoryProducts(response?.data?.products);
     } catch (err) {
       console.error(err);

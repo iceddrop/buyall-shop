@@ -32,8 +32,8 @@ const ProductOverview = () => {
     };
 
     getProduct();
-  }, []);
-
+  }, [productId]);
+  
   return (
     <>
       <Sidebarcomp />

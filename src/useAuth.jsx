@@ -19,7 +19,6 @@ const useAuth = () => {
         const timer = setTimeout(() => {
           auth.signOut()
             .then(() => {
-              console.log("User signed out after session expiration.");
               navigate("/");
             })
             .catch((error) => {

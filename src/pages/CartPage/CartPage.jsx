@@ -10,7 +10,7 @@ const CartPage = () => {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const { changeIdState } = useIdStore(); 
 
-  console.log(cart.map((product) => product.id))
+
   return (
     <>
       <Sidebarcomp />
@@ -48,7 +48,7 @@ const CartPage = () => {
                   <AiFillStar className="star-icon" />
                   <h6 className="rating">(120)</h6>
                 </div>
-                <button className="cart-btn" onClick={() => { removeFromCart(product) ; console.log(product.id)}}>Remove</button>
+                <button className="cart-btn" onClick={() => removeFromCart(product) }>Remove</button>
               </div>
             </div>
           ))}

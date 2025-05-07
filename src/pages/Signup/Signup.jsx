@@ -60,6 +60,12 @@ const Signup = () => {
       }
     } catch (error) {
       setError(error.message);
+      console.log(error.message)
+      if(error.message = "Firebase: Error (auth/email-already-in-use)"){
+        setError("This email has been registered once!")
+      } else if (error.message =  "Firebase: Error (auth/network-request-failed)"){
+        setError("Check your network connection and try again")
+      }
       // ..
     } finally {
       setLoading(false);

@@ -8,6 +8,7 @@ import { TbShoppingCartPlus } from "react-icons/tb";
 import category from "../../assets/furniture.png";
 export default function Navlink() {
     const[categoryDrop, setCategoryDrop] = React.useState(false);
+    
     function dropCategory(){
         setCategoryDrop(preval => !preval);
     }

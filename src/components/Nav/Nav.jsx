@@ -21,26 +21,40 @@ export default function Nav() {
   const cart = useCartStore((state) => state.cart);
   const [query, setQuery] = useState("");
   const { changeIdState } = useIdStore();
+  const [inputValue, setInputValue] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [options, setOptions] = useState([{ id: 1, title: "search prduct" }]);
+  // const options = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape"];
 
   const searchResult = async () => {
     try {
       const response = await getProductsInstance.get(`/search?q=${query}`);
-      setPeople(response.data.products);
+      setOptions(response.data.products);
     } catch (err) {
       console.error(err);
     }
   };
 
-  const [people, setPeople] = useState([{ id: 1, title: "search product" }]);
+ 
 
   const filteredPeople =
     query === ""
-      ? people
-      : people.filter((person) => {
-          return person.title.toLowerCase().includes(query.toLowerCase());
+      ? options
+      : options.filter((option) => {
+          return option.title.toLowerCase().includes(query.toLowerCase());
         });
 
-  const [selected, setSelected] = useState(people[0]);
+  const [selected, setSelected] = useState(options[0]);
+
+  const filteredOptions = options.filter(opt =>
+    opt.title.toLowerCase().includes(inputValue.toLowerCase())
+  );
+
+  const handleSelect = () => {
+    setInputValue(value);
+    setIsOpen(false);
+    onSelect(value);
+  };
 
   return (
     <div className="py-2 px-5">
@@ -54,7 +68,35 @@ export default function Nav() {
           />
         </div>
         <div className="flex items-center text-black">
-          <div className="pr-3">
+        <div className="relative w-64">
+      <input
+        type="text"
+        className="w-full border px-3 py-2 rounded focus:outline-none"
+        value={inputValue}
+        onChange={e => {
+          setInputValue(e.target.value);
+          setIsOpen(true);
+          searchResult()
+        }}
+        onFocus={() => setIsOpen(true)}
+      />
+      {isOpen && filteredOptions.length > 0 && (
+        <ul className="absolute z-10 bg-white border w-full mt-1 rounded shadow">
+          {filteredOptions.map((opt, idx) => (
+            <Link to="/productoverview" onClick={() => changeIdState(opt.id)} className="text-sm/6 text-black cursor-pointer" >
+            <li
+              key={idx}
+              className="px-3 py-2 hover:bg-blue-100 cursor-pointer"
+              onMouseDown={() => handleSelect(opt)} // onMouseDown to avoid input blur before click
+            >
+              {opt.title}
+            </li>
+            </Link>
+          ))}
+        </ul>
+      )}
+    </div>
+          {/* <div className="pr-3">
             <Combobox
               value={selected}
               onChange={(value) => setSelected(value)}
@@ -85,21 +127,22 @@ export default function Nav() {
               >
                 {filteredPeople.map((person) => (
                   
-                  <Link to="/productoverview" onClick={() => changeIdState(person.id)} className="text-sm/6 text-black">
+                 
                     <ComboboxOption
                       key={person.id}
                       value={person}
                       className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none data-[focus]:bg-black/60 "
                     >
+                       <Link to="/productoverview" onClick={() => changeIdState(person.id)} className="text-sm/6 text-black cursor-pointer" >
                       {person.title}
-                     
+                      </Link>
                     </ComboboxOption>
-                    </Link>
+                   
                  
                 ))}
               </ComboboxOptions>
             </Combobox>
-          </div>
+          </div> */}
           <div className="flex flex-col items-center">
             <p className="bg-red-600 text-white px-2 rounded-full">
               {cart.length}
