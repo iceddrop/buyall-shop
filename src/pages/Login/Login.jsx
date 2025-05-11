@@ -59,9 +59,8 @@ const Login = () => {
       if(error.message = "Firebase: Error (auth/invalid-credential)"){
         setError("wrong password or email!")
       } else if (error.message =  "Firebase: Error (auth/network-request-failed)"){
-        setError("Check your network connection and try again")
+        setError("Check your internet connection and try again")
       }
-      
     } finally {
       setLoading(false);
     }
