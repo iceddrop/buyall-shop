@@ -7,14 +7,6 @@ import { BsCart4 } from "react-icons/bs";
 import { useCartStore } from "../../store/store";
 import { Link } from "react-router-dom";
 import { getProductsInstance } from "../../api/axiosInstance";
-import {
-  Combobox,
-  ComboboxButton,
-  ComboboxInput,
-  ComboboxOption,
-  ComboboxOptions,
-} from "@headlessui/react";
-import clsx from "clsx";
 import { useState } from "react";
 import { useIdStore } from "../../store/store";
 export default function Nav() {
@@ -24,15 +16,17 @@ export default function Nav() {
   const [inputValue, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [options, setOptions] = useState([{ id: 1, title: "search product" }]);
+  const [showCombobox, setShowCombobox] = useState(false);
   // const options = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape"];
 
   const searchResult = async () => {
     try {
+      setShowCombobox(true);
       const response = await getProductsInstance.get(`/search?q=${query}`);
       setOptions(response.data.products);
     } catch (err) {
       console.error(err);
-    }
+    } 
   };
 
 
@@ -50,12 +44,13 @@ export default function Nav() {
     opt.title.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  const handleSelect = () => {
-    setInputValue(value);
-    setIsOpen(false);
-    onSelect(value);
+  const handleSelect = (option) => {
+  setInputValue(option.title);
+  setIsOpen(false);
+  changeIdState(option.id);
+  navigate("/productoverview");
   };
-
+console.log(isOpen)
   return (
     <div className="py-2 px-5">
       <div className="flex items-center justify-between">
@@ -81,14 +76,14 @@ export default function Nav() {
               onFocus={() => setIsOpen(true)}
               placeholder="search"
             />
-            {isOpen && filteredOptions.length > 0 && (
+            {isOpen  && (
               <ul className="absolute z-10 bg-white border w-full mt-1 rounded shadow">
                 {filteredOptions.map((opt, idx) => (
                   <Link to="/productoverview" onClick={() => changeIdState(opt.id)} className="text-sm/6 text-black cursor-pointer" >
                     <li
                       key={idx}
                       className="px-3 py-2 hover:bg-blue-100 cursor-pointer"
-                      onMouseDown={() => handleSelect(opt)} // onMouseDown to avoid input blur before click
+                      onMouseDown={() => handleSelect(opt) } // onMouseDown to avoid input blur before click
                     >
                       {opt.title}
                     </li>
