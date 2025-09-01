@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Extranav from "../components/Extranav/Extranav";
 import Nav from "../components/Nav/Nav";
 import Home from "../components/Home/Home";
@@ -13,7 +13,15 @@ import TrendingProducts from "../components/TrendingProducts/TrendingProducts";
 import Footer from "../components/Footer/Footer";
 import Sidebarcomp from "../components/Sidebar/Sidebar";
 import useAuth from "../useAuth";
+import Skeleton from "../components/Skeleton/Skeleton";
+import { useGetAllProducts } from "../store/store";
 export default function Homepage() {
+  const [isLoading, setILoading] = useState(false);
+  const {loading, data, execute} = useGetAllProducts();
+
+    useEffect(() => {
+      execute();
+    }, []);
 
   return (
     <div>
@@ -22,7 +30,7 @@ export default function Homepage() {
         <Extranav />
         <Nav />
         <Home />
-        <BestDeals />
+        {loading ? <Skeleton /> : <BestDeals />}
         <Brands />
         <Pricing />
         <Cashback />

@@ -1,8 +1,9 @@
 import { create } from "zustand";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 const ProductsData = {
-  loading: false,
+  loading: true,
   success: false,
   error: false,
   data: null,
@@ -28,10 +29,10 @@ export const useCategoryStore = create((set) => ({
 export const useGetAllProducts = create((set) => ({
   ...ProductsData,
   execute: async () => {
-    set({ ...ProductsData, loading: true });
+
     try {
       const res = await axios.get("https://dummyjson.com/products");
-      set({ ...ProductsData, success: true, data: res.data });
+      set({ ...ProductsData, success: true, data: res.data, loading: false });
     } catch (err) {
       set({ ...ProductsData, error: true, errorData: err.message });
     }
@@ -75,7 +76,7 @@ export const useCartStore = create((set, get) => ({
 
       // Update localStorage with the new cart state
       localStorage.setItem("cart", JSON.stringify(newCart));
-      alert("Item added to cart");
+      toast("Item added to cart");
 
       // Update state with the new cart
       return { cart: newCart };
@@ -94,7 +95,7 @@ export const useCartStore = create((set, get) => ({
 
       // Update localStorage with the new cart state
       localStorage.setItem("cart", JSON.stringify(newCart));
-      alert("Item removed from cart");
+      toast("Item removed from cart");
 
       return { cart: newCart };
     }),

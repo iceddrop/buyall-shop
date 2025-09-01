@@ -10,8 +10,9 @@ import { getProductsInstance } from "../../api/axiosInstance";
 import { useCartStore } from "../../store/store";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { Button, Checkbox, Label, Modal, TextInput, Toast } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer} from 'react-toastify';
 
 const CartOverview = () => {
   const { productId } = useIdStore();
@@ -97,6 +98,7 @@ const CartOverview = () => {
           </div>
         ) : (
           <div className="">
+             <ToastContainer />
             <h4 className="text-center header-text-font">
               {product?.data?.brand}
             </h4>

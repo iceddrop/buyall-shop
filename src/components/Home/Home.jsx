@@ -49,7 +49,7 @@ export default function Home() {
     });
   }, []);
   return (
-    <section className="home-bg">
+    <section className="bg-blue-300 pb-20">
       <div className="home-div-two">
         <div className="home-text-div">
           <h2 ref={titleEl} className="home-title">

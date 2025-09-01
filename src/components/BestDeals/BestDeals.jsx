@@ -8,6 +8,7 @@ import { useGetAllProducts } from "../../store/store";
 import { useIdStore } from "../../store/store";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../../store/store";
+import { ToastContainer} from 'react-toastify';
 
 export default function BestDeals() {
   const [nameIsOpened, setNameIsOpened] = useState(false);
@@ -21,11 +22,11 @@ export default function BestDeals() {
   }, []);
 
 
-
+console.log(data)
   return (
     <section className="best-deal-section">
       <h2 className="deal-title">Todays Best Deals For You!</h2>
-      {!loading && (
+      {loading ? <p>Loading</p> : (
         <Swiper spaceBetween={50} slidesPerView={3} className="swiper">
           <>
             {data?.products?.map((product) => (
@@ -84,6 +85,7 @@ export default function BestDeals() {
           />
         </div>
       )}
+      <ToastContainer />
     </section>
   );
 }

@@ -22,6 +22,7 @@ const CategoryProducts = () => {
     try {
       const response = await getProductsInstance.get(`/category/${productCategory}`);
       setCategoryProducts(response?.data?.products);
+      console.log(response)
     } catch (err) {
       console.error(err);
     }

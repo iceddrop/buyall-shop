@@ -50,8 +50,8 @@ const Login = () => {
         );
         if (userCredential.user.emailVerified) {
           navigate("/home");
-        } else {
-          setError("Verification email sent! Please check your inbox.");
+        } else if (!userCredential.user.emailVerified){
+          setError("Email has not been verified! Please check your gmail inbox.");
         }
       }
     } catch (error) {
@@ -125,7 +125,7 @@ const Login = () => {
             <Link className="underline hover:text-black">Reset password</Link>
           </span>
         </form>
-        <p className="text-center text-red-700">{error}</p>
+        <p className="text-center text-red-700 px-2">{error}</p>
       </div>
     </div>
   );

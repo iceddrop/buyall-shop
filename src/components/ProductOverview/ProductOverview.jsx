@@ -8,6 +8,7 @@ import { AiFillStar } from "react-icons/ai";
 import { PacmanLoader } from "react-spinners";
 import { getProductsInstance } from "../../api/axiosInstance";
 import { useCartStore } from "../../store/store";
+import { ToastContainer} from 'react-toastify';
 
 const ProductOverview = () => {
   const { productId } = useIdStore();
@@ -107,6 +108,7 @@ const ProductOverview = () => {
             </div>
           </div>
         )}
+        <ToastContainer />
       </div>
     </>
   );

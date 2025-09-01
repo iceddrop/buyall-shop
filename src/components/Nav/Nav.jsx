@@ -23,6 +23,7 @@ export default function Nav() {
     try {
       setShowCombobox(true);
       const response = await getProductsInstance.get(`/search?q=${query}`);
+      console.log(response)
       setOptions(response.data.products);
     } catch (err) {
       console.error(err);
@@ -44,18 +45,17 @@ export default function Nav() {
     opt.title.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  const handleSelect = (option) => {
+  const handleSelect = () => {
   setInputValue(option.title);
   setIsOpen(false);
   changeIdState(option.id);
   navigate("/productoverview");
   };
-console.log(isOpen)
+
   return (
     <div className="py-2 px-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <RxHamburgerMenu className="text-white" />
           <img
             src={logo}
             className="w-24 md:w-40  md:ml-4 mr-4 md:mr-0"

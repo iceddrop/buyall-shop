@@ -4,6 +4,8 @@ import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import Sidebarcomp from "../../components/Sidebar/Sidebar";
 import Extranav from "../../components/Extranav/Extranav";
 import Nav from "../../components/Nav/Nav";
+import { ToastContainer } from "react-toastify";
+import { Toast } from "flowbite-react";
 
 const CartPage = () => {
   const cart = useCartStore((state) => state.cart);
@@ -17,7 +19,7 @@ const CartPage = () => {
       <div className="md:pl-20">
         <Extranav/>
         <Nav/>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-0 px-4 md:px-2">
+        {cart ? <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-0 px-4 md:px-2">
           {cart.map((product) => (
             <div key={product.id} className="md:pl-24"  onClick={() => changeIdState(product.id)}>
               <div className="img-div">
@@ -52,7 +54,8 @@ const CartPage = () => {
               </div>
             </div>
           ))}
-        </div>
+          <ToastContainer />
+        </div> : <p className="pt-96 pl-40">no product in cart</p>}
       </div>
     </>
   );
