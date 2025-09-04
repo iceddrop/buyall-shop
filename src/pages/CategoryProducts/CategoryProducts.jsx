@@ -23,7 +23,7 @@ const CategoryProducts = () => {
     try {
       setIsLoading(true);
       const response = await getProductsInstance.get(
-        `/categor/${productCategory}`
+        `/category/${productCategory}`
       );
       setCategoryProducts(response?.data?.products);
       console.log(response);
