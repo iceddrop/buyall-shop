@@ -6,6 +6,7 @@ import Extranav from "../../components/Extranav/Extranav";
 import Nav from "../../components/Nav/Nav";
 import { ToastContainer } from "react-toastify";
 import { Toast } from "flowbite-react";
+import EmptyCart from "./EmptyCart";
 
 const CartPage = () => {
   const cart = useCartStore((state) => state.cart);
@@ -19,9 +20,9 @@ const CartPage = () => {
       <div className="md:pl-20">
         <Extranav/>
         <Nav/>
-        {cart ? <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-0 px-4 md:px-2">
+        {cart.length == 0 ? <EmptyCart/> : <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 md:gap-0 px-4 md:px-2">
           {cart.map((product) => (
-            <div key={product.id} className="md:pl-24"  onClick={() => changeIdState(product.id)}>
+            <div key={product.id} className=""  onClick={() => changeIdState(product.id)}>
               <div className="img-div">
                 <img
                   src={product.thumbnail}
@@ -55,7 +56,7 @@ const CartPage = () => {
             </div>
           ))}
           <ToastContainer />
-        </div> : <p className="pt-96 pl-40">no product in cart</p>}
+        </div>}
       </div>
     </>
   );

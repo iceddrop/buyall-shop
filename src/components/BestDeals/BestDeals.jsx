@@ -27,7 +27,7 @@ console.log(data)
     <section className="best-deal-section">
       <h2 className="deal-title">Todays Best Deals For You!</h2>
       {loading ? <p>Loading</p> : (
-        <Swiper spaceBetween={50} slidesPerView={3} className="swiper">
+        <Swiper spaceBetween={50} slidesPerView={3} className="swiper cursor-grab">
           <>
             {data?.products?.map((product) => (
               <SwiperSlide

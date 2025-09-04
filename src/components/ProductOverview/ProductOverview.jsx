@@ -29,6 +29,8 @@ const ProductOverview = () => {
         setLoading(false);
       } catch (err) {
         setError(err);
+      } finally {
+        setLoading(false);
       }
     };
 

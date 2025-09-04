@@ -31,6 +31,16 @@ const Sidebarcomp = () => {
     setIsSidebarOpenOne(!isSidebarOpenOne);
   };
 
+  const closeSidebar = () => {
+    setIsSidebarOpenOne(false);
+    setIsSidebarOpenTwo(false);
+    setIsSidebarOpenThree(false);
+    setIsSidebarOpenFour(false);
+    setIsSidebarOpenFive(false);
+    setIsSidebarOpenSix(false);
+    setIsSidebarOpenSeven(false);
+  };
+
   return (
     <>
       <button className="fixed  sm:hidden " onClick={toggleSidebar}>
@@ -57,7 +67,7 @@ const Sidebarcomp = () => {
           imgAlt="afridata logo"
           className="text-family"
         >
-          <button onClick={toggleSidebar}>
+          <button onClick={closeSidebar}>
             <FaTimes className={isSidebarOpenOne ? " ml-28" : "text-white"} />
           </button>
         </Sidebar.Logo>
